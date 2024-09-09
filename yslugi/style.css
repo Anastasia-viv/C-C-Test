@@ -1,0 +1,696 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+html {
+  cursor: none;
+}
+
+#circularcursor {
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+}
+
+/* общие */
+
+@font-face {
+  font-family: "KvLight";
+  src: url("../fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Thin.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "kvRegular";
+  src: url("../fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Regular.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "kvMedium";
+  src: url("../fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Medium.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "kvBald";
+  src: url("../fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Paizolla";
+  src: url("../fonts/Piazzolla.ttf") format("opentype");
+}
+
+.container {
+  /*    padding: 32px 208px; */
+  padding-left: calc(100% / 8);
+  padding-right: calc(100% / 8);
+  padding-top: calc(100% / 55);
+  /*  width: 100%; */
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  cursor: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  cursor: none;
+}
+
+.flex {
+  display: flex;
+}
+
+:root {
+  --yellowcol: #fec746;
+  --purplecol: #ad00ff;
+  --orangecol: #ff7c17;
+}
+
+#preloader {
+  position: fixed; /* Фиксированное позиционирование */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 219, 136),
+    rgb(255, 161, 90),
+    rgb(201, 86, 255)
+  );
+  display: flex; /* Используем flexbox для центрирования */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  z-index: 9999; /* Обеспечиваем, чтобы преаплоадер был выше других элементов */
+}
+
+#preloader img {
+  width: 100px; /* Размер изображения */
+  animation: spin 2s linear infinite; /* Анимация вращения */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  ---------------- header ------------- */
+.header {
+  background: #000;
+}
+
+.headInner {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification {
+  background: linear-gradient(
+    110deg,
+    rgb(255, 255, 255, 0.4),
+    rgb(115, 115, 115, 0.1)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: #fff solid 1px;
+  border-radius: 2.0833vw;
+}
+
+.logoHeader {
+  max-height: 70%;
+  max-width: 80%;
+}
+
+.notiInner {
+  padding: 0.4167vw 5.2083vw 0.4167vw 2.0833vw;
+  align-items: center;
+}
+
+.notiText-1 {
+  font-size: 0.7vw;
+  font-weight: 200;
+  font-family: "Paizolla", sans-serif;
+}
+
+.notiText-2 {
+  font-size: 1.25vw;
+  font-weight: 300;
+  font-stretch: semi-condensed;
+  font-family: "kvLight", sans-serif;
+}
+
+.logoHeader {
+  padding-right: 0.625vw;
+}
+
+.backspace a {
+  font-family: "Paizolla", sans-serif;
+  color: #fff;
+  padding-left: 0.8vw;
+  font-size: 1.2vw;
+}
+
+.backspace a:hover {
+  color: var(--yellowcol);
+  transition: 3s;
+}
+
+.backspace {
+  align-items: center;
+  text-align: center;
+}
+
+.back {
+  width: 7px;
+  padding-top: 3px;
+  height: 14px;
+}
+
+/* main */
+.main {
+  background-color: #000;
+  padding: 7vw 0;
+  /*   min-height: 450vw; */
+  /*   position: absolute; */
+  width: 100%;
+}
+
+.uslugiCont {
+  padding: 12vw 0;
+}
+
+.uslName {
+  font-family: "kvBald";
+  font-weight: bolder;
+}
+
+.usluga {
+  flex-direction: row;
+  position: relative;
+  /*  padding: 7vw 0; */
+  background-image: url(../yslugi/img/glow.png);
+  background-position-x: 60vw;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+.usluga1 {
+  flex-direction: row;
+  position: relative;
+  /*  padding: 7vw 0; */
+  background-image: url(../yslugi/img/glow.png);
+  background-position-x: -70vw;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+.spisokUslug {
+  color: #fff;
+  line-height: 1.5em;
+}
+
+.textBlock {
+  width: 50%;
+  background: linear-gradient(
+    110deg,
+    rgb(255, 255, 255, 0.4),
+    rgb(115, 115, 115, 0.1)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: #fff solid 1px;
+  border-radius: 2.0833vw;
+  position: absolute;
+  right: 13vw; /* Сдвиг на 90% ширины первого блока */
+}
+
+.textblockInner {
+  padding: 3vw 7vw;
+}
+
+/* .logoImg {
+  max-width: 45vw; 
+  height: auto;
+} */
+
+.imgBlock {
+  max-width: 40vw; /* Ширина первого блока */
+  height: auto; /* Высота первого блока */
+}
+
+.textHead,
+.textHead1,
+.textHead2 {
+  text-align: center;
+  position: relative;
+  z-index: 110;
+  font-weight: lighter;
+  color: #fff;
+  font-family: "kvRegular", san-serif;
+  font-size: 2.6vw;
+}
+
+.textHead::after {
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: lighter;
+  content: "Экспертная настройка Яндекс.Директ (РСЯ+ПОИСК)";
+  color: #fff;
+  /*  display: inline-block; */
+  font-size: 2.6vw;
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  /*  -webkit-background-clip: padding-box;
+  background-clip: padding-box; */
+  filter: blur(20px);
+  margin: 0 1vw;
+  -webkit-text-fill-color: transparent;
+}
+
+.textHead1::after {
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: lighter;
+  content: "SMM: Ведение каналов и сообществ";
+  color: #fff;
+  /*  display: inline-block; */
+  font-size: 2.6vw;
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  /*  -webkit-background-clip: padding-box;
+  background-clip: padding-box; */
+  filter: blur(20px);
+  /*   margin: 0 1vw; */
+  -webkit-text-fill-color: transparent;
+}
+
+.textHead2::after {
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: lighter;
+  content: "Создание статичного креатива(рекламного баннера)";
+  color: #fff;
+  /*  display: inline-block; */
+  font-size: 2.6vw;
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  /*  -webkit-background-clip: padding-box;
+  background-clip: padding-box; */
+  filter: blur(20px);
+  margin: 0 1vw;
+  -webkit-text-fill-color: transparent;
+}
+
+.usTextInner {
+  font-size: 1.45vw;
+  padding: 6vw 0 2vw;
+  font-family: "Paizolla", san-serif;
+  font-weight: lighter;
+  text-align: justify;
+}
+
+.usTextInner1 {
+  font-size: 1.45vw;
+  padding: 4vw 0 2vw;
+  font-family: "Paizolla", san-serif;
+  font-weight: lighter;
+  text-align: justify;
+}
+
+.spisokUslug {
+  padding: 2vw 0;
+}
+
+.exsamples {
+  padding: 0vw 0 2vw;
+  font-size: 1.45vw;
+  font-family: "Paizolla", san-serif;
+  font-weight: lighter;
+}
+
+.exsamples img {
+  max-height: 40vw;
+  max-width: auto;
+  margin-bottom: 4vw;
+}
+
+.ex1 {
+  background: linear-gradient(
+    110deg,
+    rgb(255, 255, 255, 0.4),
+    rgb(115, 115, 115, 0.1)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: #fff solid 1px;
+  border-radius: 2.0833vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0vw 0 3vw;
+}
+
+.ex1Inner {
+  padding: 3vw 2vw;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.exsP {
+  padding-bottom: 1.5vw;
+  font-size: 1.45vw;
+  font-family: "Paizolla", san-serif;
+  font-weight: lighter;
+}
+.middleTextPad {
+  padding: 3vw 0 2vw;
+  text-align: justify;
+}
+
+.ex1Inner h3 {
+  font-family: "KvRegular";
+}
+
+.ex1Inner a {
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: none;
+  font-weight: bolder;
+  font-family: "KvRegular", sans-serif;
+}
+
+.ex1Inner a:hover {
+  color: var(--yellowcol);
+  transition: 0.8s;
+}
+
+.prise {
+  text-align: center;
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: none;
+  font-family: "KvRegular", sans-serif;
+  font-size: 2.6vw;
+}
+
+.underprice {
+  text-align: center;
+  font-family: "KvLight", sans-serif;
+  font-size: 2vw;
+  margin: 2vw 0 4vw;
+}
+
+.underprice1 {
+  text-align: center;
+  font-family: "KvLight", sans-serif;
+  font-size: 2vw;
+  margin: 1vw 0 4vw;
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.zakazA {
+  margin: 6vw 0 3vw;
+}
+
+.zakazatUsl {
+  background: linear-gradient(
+    110deg,
+    rgb(255, 255, 255, 0.7),
+    rgb(115, 115, 115, 0.4)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: #fff solid 1px;
+  border-radius: 1.3vw;
+
+  color: #570080;
+
+  font-size: 2vw;
+  font-family: "kvMedium", sans-serif;
+
+  padding: 1vw 9.22vw;
+
+  text-align: center;
+}
+
+.zakazatUsl:hover {
+  background: linear-gradient(
+    35deg,
+    var(--yellowcol),
+    var(--orangecol),
+    var(--purplecol)
+  );
+  color: #fffdd5;
+  /*   background-color: var(--orangecol); */
+  transition: 1.8s;
+  cursor: none;
+}
+
+.imgBlock1 {
+  max-width: 50%;
+  -moz-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+/* ----------- footer ---------- */
+.foot {
+  background-color: #000;
+  border-top: #fff solid 1px;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  padding-left: calc(100% / 8);
+  padding-right: calc(100% / 8);
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  /*   position: absolute;
+  width: 100%; */
+}
+
+.footRow1 {
+  font-family: "KvRegular", sans-serif;
+  font-size: 1.1vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footRowName {
+  font-family: "KvRegular", sans-serif;
+  font-size: 1.3vw;
+  padding-bottom: 1vw;
+}
+
+.footRow2,
+.footRow3 {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footRow2 a,
+.footRow3 a {
+  color: #fff;
+  font-size: 1.15vw;
+  font-family: "Paizolla", san-serif;
+  margin-top: 1vw;
+}
+
+.footOPtions {
+  flex-direction: column;
+}
+
+.option1 {
+  padding-top: 1vw;
+}
+
+.footRow2 p,
+.footRow3 p {
+  color: #fff;
+  font-size: 1.15vw;
+  font-family: "Paizolla", san-serif;
+}
+
+.footRow3 a:hover {
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: 0.6s;
+  cursor: none;
+}
+
+.footRow2 a:hover {
+  background-image: linear-gradient(
+    35deg,
+    rgb(255, 195, 57),
+    rgb(255, 111, 0),
+    rgb(174, 0, 255)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: 0.6s;
+  cursor: none;
+}
+
+.option {
+  padding-top: 1vw;
+}
+
+/*  /// адаптив ///// */
+@media screen and (max-width: 450px) {
+  .logoHeader {
+    width: 7vw;
+    height: 9.5vw;
+  }
+
+  .notiInner {
+    padding: 0vw 19vw 0vw 4vw;
+  }
+
+  .notification {
+    border-radius: 5vw;
+  }
+
+  .usluga {
+    background-position-x: 40vw;
+    background-size: 155vw;
+    background-blend-mode: lighten;
+  }
+
+  .usluga1 {
+    background-position-x: -65vw;
+    background-size: 105vw;
+    background-blend-mode: lighten;
+  }
+  .zakazatUsl{
+    padding: 1vw 9vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logoHeader {
+    width: 7vw;
+    height: 9.5vw;
+  }
+
+  .notiInner {
+    padding: 0vw 19vw 0vw 4vw;
+  }
+
+  .notification {
+    border-radius: 4.3vw;
+  }
+
+  .usluga {
+    background-position-x: 40vw;
+    background-size: 155vw;
+    background-blend-mode: lighten;
+  }
+
+  .usluga1 {
+    background-position-x: -65vw;
+    background-size: 105vw;
+    background-blend-mode: lighten;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .usluga {
+    background-position-x: 50vw;
+    background-size: 155vw;
+    background-blend-mode: lighten;
+  }
+
+  .usluga1 {
+    background-position-x: -75vw;
+    background-size: 105vw;
+    background-blend-mode: lighten;
+  }
+}

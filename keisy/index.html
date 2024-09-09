@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <link rel="stylesheet" href="../aos.css" />
+    <link rel="stylesheet" href="../keisy/style.css" />
+    <script src="../keisy/script.js" defer></script>
+    <script src="../aos.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <style>
+      ::selection {
+        background-color: #8b008f;
+        color: #ffdf95;
+      }
+    </style>
+    <title>Click&Convert</title>
+  </head>
+  <body>
+    <div id="circularcursor"></div>
+
+    <div id="preloader">
+      <img src="../img/logo.png" alt="Загрузка..." />
+    </div>
+
+    <!-- ----------------- header -------------------- -->
+    <header class="header">
+      <div class="container">
+        <div class="headInner flex">
+          <div class="backspace flex">
+            <img src="../yslugi/img/Vector.png" alt="" class="back" />
+            <a href="../index.html">на главную</a>
+          </div>
+
+          <!-- уведомление начало-->
+          <div
+            class="notification flex"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="notiInner flex">
+              <img
+                src="../img/logo.png"
+                alt="logo"
+                class="logoHeader"
+              /><!-- картинка с лого -->
+              <div class="notificationText">
+                <p class="notiText-1">since 2024</p>
+                <!-- надпись над именем компании -->
+                <p class="notiText-2">Click & Convert</p>
+                <!-- название компании -->
+              </div>
+            </div>
+          </div>
+          <!-- уведомление конец -->
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- заголовок кейсы -->
+      <div class="uslName flex">
+        <div class="usl1 uslPad">
+          <div id="typed-strings">
+            <h2 class="usl-h2" style="color: #fec746">КЕЙСЫ — КЕЙСЫ — КЕЙСЫ</h2>
+            <h2 class="usl-h2" style="color: #ad00ff">КЕЙСЫ — КЕЙСЫ — КЕЙСЫ</h2>
+            <h2 class="usl-h2" style="color: #ff7c17">КЕЙСЫ — КЕЙСЫ — КЕЙСЫ</h2>
+          </div>
+
+          <div class="text-typing textFont">
+            <span id="typed" style="color: #fec746; font-size: 6.6vw"></span>
+          </div>
+          <div class="text-typing1 textFont">
+            <span id="typed1" style="color: #ad00ff; font-size: 6.6vw"></span>
+          </div>
+          <div class="text-typing2 textFont">
+            <span id="typed2" style="color: #ff7c17; font-size: 6.6vw"></span>
+          </div>
+        </div>
+      </div>
+      <!-- сами кейсы -->
+      <div class="rightSideBlock data-aos="fade-down" data-aos-duration="3000"">
+      <div class="container">
+        <!-- кейс-блок 01. -->
+        <div class="case1" data-aos="fade-up" data-aos-duration="2000">
+          <div class="caseInner flex">
+            <!-- верхняя часть кейса -->
+            <div class="upper">
+              <!-- номер кейса -->
+              <h2 class="numberOfCase" style="color: #fec746; font-size: 4vw">
+                01.
+              </h2>
+              <!-- что было сделано для заказчика,
+             заголовок карточки -->
+              <h2 class="whatYouDo" style="font-size: 4vw">
+                Сделаем так-то так так
+              </h2>
+            </div>
+            <!-- нижняя часть текста -->
+            <div class="down">
+              <!-- блок с названием и картинкой заказчика -->
+              <div class="companyName flex">
+                <img
+                  src="../img/tree.png"
+                  alt="company logo"
+                  class="companyImg"
+                />
+                <!-- имя компании -->
+                <p class="companyP">Дом отдыха “Серебряный плес”</p>
+              </div>
+              <!-- описание проекта -->
+              <div class="innerText">
+                <p class="innerP">
+                  <!-- что сделали в проекте -->
+                  Так, мы настроили показы в РСЯ для получения максимального
+                  количества бронирований по минимальной цене
+                </p>
+              </div>
+              <!-- достигнутый результат -->
+              <div class="results">
+                <div class="leftCol">
+                  <p class="name">доход клиента</p>
+                  <p class="results">15 336 152,10₽</p>
+                  <p class="name">потрачено</p>
+                  <p class="results">332 227,06₽</p>
+                  <p class="name">% рекламных расходов</p>
+                  <p class="results">2,17%</p>
+                </div>
+
+                <div class="rightCol">
+                  <p class="name">количество броней</p>
+                  <p class="results">460</p>
+                  <p class="name">цена брони</p>
+                  <p class="results">722,34₽</p>
+                  <p class="name">ROI</p>
+                  <p class="results">4515,47%</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="alignerPhoto flex">
+              <div class="photoExamples">
+                <img
+                  src="../img/kreativ1.jpg"
+                  alt=""
+                  class="imgPadd"
+                  id="rotation"
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                />
+                <img
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  src="../img/kreativ.jpg"
+                  alt=""
+                  class="imgPadd"
+                />
+
+                <video
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  class="imgPadd"
+                  controls="controls"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="../img/vidKreativ.mp4" type="video/MP4;" />
+                </video>
+              </div>
+            </div>
+
+            <!-- кнопка узнать -->
+            <div class="moreInfo" data-aos="fade-up" data-aos-duration="2000">
+              <a href="case_Podrobno/index.html">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+        <!-- кейс-блок 02. -->
+        <div class="case1" data-aos="fade-up" data-aos-duration="2000">
+          <div class="caseInner flex">
+            <!-- верхняя часть кейса -->
+            <div class="upper">
+              <!-- номер кейса -->
+              <h2 class="numberOfCase" style="color: #ff7c17; font-size: 4vw">
+                02.
+              </h2>
+              <!-- что было сделано для заказчика,
+               заголовок карточки -->
+              <h2 class="whatYouDo" style="font-size: 4vw">
+                Сделаем так-то так так
+              </h2>
+            </div>
+            <!-- нижняя часть текста -->
+            <div class="down">
+              <!-- блок с названием и картинкой заказчика -->
+              <div class="companyName flex">
+                <img
+                  src="../img/tree.png"
+                  alt="company logo"
+                  class="companyImg"
+                />
+                <!-- имя компании -->
+                <p class="companyP">Дом отдыха “Серебряный плес”</p>
+              </div>
+              <!-- описание проекта -->
+              <div class="innerText">
+                <p class="innerP">
+                  <!-- что сделали в проекте -->
+                  Так, мы настроили показы в РСЯ для получения максимального
+                  количества бронирований по минимальной цене
+                </p>
+              </div>
+              <!-- достигнутый результат -->
+              <div class="results">
+                <div class="leftCol">
+                  <p class="name">доход клиента</p>
+                  <p class="results">15 336 152,10₽</p>
+                  <p class="name">потрачено</p>
+                  <p class="results">332 227,06₽</p>
+                  <p class="name">% рекламных расходов</p>
+                  <p class="results">2,17%</p>
+                </div>
+
+                <div class="rightCol">
+                  <p class="name">количество броней</p>
+                  <p class="results">460</p>
+                  <p class="name">цена брони</p>
+                  <p class="results">722,34₽</p>
+                  <p class="name">ROI</p>
+                  <p class="results">4515,47%</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="alignerPhoto flex">
+              <div class="photoExamples">
+                <img
+                  src="
+                  ../img/kreativ1.jpg"
+                  alt=""
+                  class="imgPadd"
+                  id="rotation"
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                />
+                <img
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  src="../img/kreativ.jpg"
+                  alt=""
+                  class="imgPadd"
+                />
+
+                <video
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  class="imgPadd"
+                  controls="controls"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="img/vidKreativ.mp4" type="video/MP4;" />
+                </video>
+              </div>
+            </div>
+
+            <!-- кнопка узнать -->
+            <div class="moreInfo" data-aos="fade-up" data-aos-duration="2000">
+              <a href="case_Podrobno/index.html">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+        <!-- кейс-блок 03. -->
+        <div class="case1" data-aos="fade-up" data-aos-duration="2000">
+          <div class="caseInner flex">
+            <!-- верхняя часть кейса -->
+            <div class="upper">
+              <!-- номер кейса -->
+              <h2 class="numberOfCase" style="color: #ad00ff; font-size: 4vw">
+                03.
+              </h2>
+              <!-- что было сделано для заказчика,
+               заголовок карточки -->
+              <h2 class="whatYouDo" style="font-size: 4vw">
+                Сделаем так-то так так
+              </h2>
+            </div>
+            <!-- нижняя часть текста -->
+            <div class="down">
+              <!-- блок с названием и картинкой заказчика -->
+              <div class="companyName flex">
+                <img
+                  src="img/tree.png"
+                  alt="company logo"
+                  class="companyImg"
+                />
+                <!-- имя компании -->
+                <p class="companyP">Дом отдыха “Серебряный плес”</p>
+              </div>
+              <!-- описание проекта -->
+              <div class="innerText">
+                <p class="innerP">
+                  <!-- что сделали в проекте -->
+                  Так, мы настроили показы в РСЯ для получения максимального
+                  количества бронирований по минимальной цене
+                </p>
+              </div>
+              <!-- достигнутый результат -->
+              <div class="results">
+                <div class="leftCol">
+                  <p class="name">доход клиента</p>
+                  <p class="results">15 336 152,10₽</p>
+                  <p class="name">потрачено</p>
+                  <p class="results">332 227,06₽</p>
+                  <p class="name">% рекламных расходов</p>
+                  <p class="results">2,17%</p>
+                </div>
+
+                <div class="rightCol">
+                  <p class="name">количество броней</p>
+                  <p class="results">460</p>
+                  <p class="name">цена брони</p>
+                  <p class="results">722,34₽</p>
+                  <p class="name">ROI</p>
+                  <p class="results">4515,47%</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="alignerPhoto flex">
+              <div class="photoExamples">
+                <img
+                  src="img/kreativ1.jpg"
+                  alt=""
+                  class="imgPadd"
+                  id="rotation"
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                />
+                <img
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  src="img/kreativ.jpg"
+                  alt=""
+                  class="imgPadd"
+                />
+
+                <video
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  class="imgPadd"
+                  controls="controls"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="img/vidKreativ.mp4" type="video/MP4;" />
+                </video>
+              </div>
+            </div>
+
+            <!-- кнопка узнать -->
+            <div class="moreInfo" data-aos="fade-up" data-aos-duration="2000">
+              <a href="case_Podrobno/index.html">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+        <!-- кейс-блок 04. -->
+        <div class="case1" data-aos="fade-up" data-aos-duration="2000">
+          <div class="caseInner flex">
+            <!-- верхняя часть кейса -->
+            <div class="upper">
+              <!-- номер кейса -->
+              <h2 class="numberOfCase" style="color: #fec746; font-size: 4vw">
+                04.
+              </h2>
+              <!-- что было сделано для заказчика,
+                 заголовок карточки -->
+              <h2 class="whatYouDo" style="font-size: 4vw">
+                Сделаем так-то так так
+              </h2>
+            </div>
+            <!-- нижняя часть текста -->
+            <div class="down">
+              <!-- блок с названием и картинкой заказчика -->
+              <div class="companyName flex">
+                <img
+                  src="img/tree.png"
+                  alt="company logo"
+                  class="companyImg"
+                />
+                <!-- имя компании -->
+                <p class="companyP">Дом отдыха “Серебряный плес”</p>
+              </div>
+              <!-- описание проекта -->
+              <div class="innerText">
+                <p class="innerP">
+                  <!-- что сделали в проекте -->
+                  Так, мы настроили показы в РСЯ для получения максимального
+                  количества бронирований по минимальной цене
+                </p>
+              </div>
+              <!-- достигнутый результат -->
+              <div class="results">
+                <div class="leftCol">
+                  <p class="name">доход клиента</p>
+                  <p class="results">15 336 152,10₽</p>
+                  <p class="name">потрачено</p>
+                  <p class="results">332 227,06₽</p>
+                  <p class="name">% рекламных расходов</p>
+                  <p class="results">2,17%</p>
+                </div>
+
+                <div class="rightCol">
+                  <p class="name">количество броней</p>
+                  <p class="results">460</p>
+                  <p class="name">цена брони</p>
+                  <p class="results">722,34₽</p>
+                  <p class="name">ROI</p>
+                  <p class="results">4515,47%</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="alignerPhoto flex">
+              <div class="photoExamples">
+                <img
+                  src="img/kreativ1.jpg"
+                  alt=""
+                  class="imgPadd"
+                  id="rotation"
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                />
+                <img
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  src="img/kreativ.jpg"
+                  alt=""
+                  class="imgPadd"
+                />
+
+                <video
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  class="imgPadd"
+                  controls="controls"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="img/vidKreativ.mp4" type="video/MP4;" />
+                </video>
+              </div>
+            </div>
+
+            <!-- кнопка узнать -->
+            <div class="moreInfo" data-aos="fade-up" data-aos-duration="2000">
+              <a href="case_Podrobno/index.html">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="foot flex">
+      <div class="footRow1 flex">
+        <img src="img/logo.png" alt="" class="footLogo" />
+        <p class="companyNAme" style="padding-top: 0.6vw">Click & Convert</p>
+      </div>
+
+      <div class="footRow2 flex" style="width: 17%">
+        <p class="footRowName" style="color: #fec746; font-size: 1.3vw">
+          Услуги
+        </p>
+        <div class="footOPtions flex">
+          <a href="yslugi/index.html" class="option1"
+            >Контекстная реклама Яндекс.Директ</a
+          >
+          <a href="yslugi/index.html" class="option1">SMM</a>
+          <a href="yslugi/index.html" class="option1"
+            >Создание бизнес vk сообщества под ключ</a
+          >
+          <a href="yslugi/index.html" class="option1"
+            >Создание статичного креатива (баннер)</a
+          >
+        </div>
+      </div>
+
+      <div class="footRow3 flex">
+        <p class="footRowName" style="color: #ad00ff; font-size: 1.3vw">
+          Контакты
+        </p>
+        <div class="footOPtions">
+          <div class="cont1">
+            <!-- название контакта -->
+            <div class="contName option"><p>телефон</p></div>
+            <!-- сам контакт -->
+            <div class="cont">
+              <a href="tel:+75151615611">+75151615611</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName option"><p>почта</p></div>
+            <div class="cont">
+              <a href="mailto:pskfogn@kfdg.gg">pskfogn@kfdg.gg</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName option"><p>телефон</p></div>
+            <div class="cont">
+              <a href="tel:+75151615611">+75151615611</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName option"><p>почта</p></div>
+            <div class="cont">
+              <a href="mailto:pskfogn@kfdg.gg">pskfogn@kfdg.gg</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

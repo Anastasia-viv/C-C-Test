@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <link rel="stylesheet" href="aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="aos.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <style>
+      ::selection {
+        background-color: #8b008f;
+        color: #ffdf95;
+      }
+    </style>
+
+    <title>Click&Convert</title>
+  </head>
+  <body class="body">
+    <div id="circularcursor"></div>
+
+    <div id="preloader">
+      <img src="img/logo.png" alt="Загрузка..." />
+    </div>
+    <!-- хэдэр. Здесь будут содержаться: все ссылки с самого верха и уведомление с лого -->
+    <header class="header">
+      <div class="container">
+        <div class="headerInner flex">
+          <div class="link">
+            <a href="#anchor1" class="boxHover">о нас</a
+            ><!-- ссылка на раздел "Кто мы" -->
+          </div>
+          <div class="link">
+            <a href="#anchor2" class="boxHover">кейсы</a
+            ><!-- ссылка на раздел с кейсами -->
+          </div>
+
+          <!-- уведомление начало-->
+          <div
+            class="notification flex"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="notiInner flex">
+              <img
+                src="
+                img/logo.png"
+                alt="logo"
+                class="logoHeader"
+              /><!-- картинка с лого -->
+              <div class="notificationText">
+                <p class="notiText-1">since 2024</p>
+                <!-- надпись над именем компании -->
+                <p class="notiText-2">Click & Convert</p>
+                <!-- название компании -->
+              </div>
+            </div>
+          </div>
+          <!-- уведомление конец -->
+
+          <div class="link">
+            <a href="#anchor3" class="boxHover">услуги</a
+            ><!-- ссылка на раздел с услугами -->
+          </div>
+          <div class="link">
+            <a href="#anchor4" class="boxHover">контакты</a
+            ><!-- ссылка на раздел с контактами" -->
+          </div>
+        </div>
+
+        <!-- главный раздел, до футера -->
+
+        <!------------------ секция с первой страницей ------------------------>
+        <div class="centerBlock flex">
+          <div
+            class="section_FirstPage flex"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="leftAlign">
+              <span style="font-weight: 100; color: #fff">Мы </span>
+              <span style="font-weight: 600; color: #fff">знаем,</span><br />
+            </div>
+
+            <div class="centerAlign">
+              <span style="font-weight: 100; color: #fff">как </span>
+              <span style="font-weight: 600; color: #fff">заставить </span>
+              <span style="font-weight: 100; color: #fff">рекламу</span><br />
+            </div>
+
+            <div class="rightAlign">
+              <span style="font-weight: 900; color: #ff7c17; text-align: end"
+                >работать</span
+              >
+              <img
+                src="img/1.png"
+                alt="1"
+                class="one"
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="2500"
+                data-aos-offset="0"
+              />
+            </div>
+
+            <!-- 1 -->
+          </div>
+        </div>
+
+        <!-- стрелочка -->
+        <div class="arrow" data-aos="fade-up" data-aos-duration="2000">
+          <img src="img/Vector.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- ---------------------секция-раздел О нас--------------------- -->
+      <!--************** ЗАПОЛНИТЬ ОПИСАНИЕ ****************** -->
+      <div
+        class="section_KtoMy flex"
+        id="anchor1"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
+        <div class="ktoIn flex">
+          <div class="opisanie" data-aos="fade-up" data-aos-duration="3000">
+            <div class="container">
+              <!-- заголовок-описание -->
+              <h1 class="opis">lorem ipsum</h1>
+              <!-- текс в описании -->
+              <p class="opisText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                ipsum, doloremque nostrum consectetur accusamus laudantium ipsa
+                iure quasi suscipit molestiae quam aliquid architecto voluptatum
+                sapiente officia sit enim quisquam possimus! Lorem ipsum dolor
+                sit amet, consectetur adipisicing elit. Porro, delectus sint
+                repellat est aperiam officia recusandae unde aut neque ea
+                inventore id, totam praesentium esse. Fugiat ducimus corporis
+                soluta aliquam.
+              </p>
+            </div>
+          </div>
+          <!-- бэкграунд с надписью -->
+          <div class="bgFirstPage">
+            <p class="whoWeAre">кто мы — кто мы</p>
+            <p class="whoWeAre">кто мы — кто мы</p>
+            <p class="whoWeAre">кто мы — кто мы</p>
+            <p class="whoWeAre">кто мы — кто мы</p>
+            <p class="whoWeAre">кто мы — кто мы</p>
+            <p class="whoWeAre">кто мы — кто мы</p>
+          </div>
+        </div>
+      </div>
+
+      <!---------------------- секция с кейсами --------------------------->
+      <div class="section_Keisy" id="anchor2">
+        <!-- бегущая строка -->
+        <div class="runningStroke">
+          <marquee class="runningStr" direction="left" scrollamount="8"
+            >почему мы — почему мы — почему мы — почему мы — почему мы — почему
+            мы — почему мы — почему мы — почему мы — почему мы — почему мы —
+            почему мы — почему мы — почему мы — почему мы — почему мы — почему
+            мы — почему мы — почему мы — почему мы — почему мы — почему мы —
+            почему мы — почему мы — почему мы — почему мы — почему мы — почему
+            мы — почему мы — почему мы — почему мы — почему мы — почему мы —
+            почему мы — почему мы — почему мы — почему мы — почему мы — почему
+            мы — почему мы</marquee
+          >
+          <!-- <h3 class="runningStr">почему мы — почему мы</h3> -->
+        </div>
+        <div class="rightSideBlock flex">
+          <!-- боковой текст -->
+          <div
+            class="sideText flex"
+            data-aos="fade-down"
+            data-aos-duration="2000"
+          >
+            <h1 class="side">почему</h1>
+            <h1 class="side" id="otsup">мы</h1>
+          </div>
+
+          <!-- кейс-блок 01. -->
+          <div class="case1" data-aos="fade-up" data-aos-duration="2000">
+            <div class="caseInner flex">
+              <!-- верхняя часть кейса -->
+              <div class="upper">
+                <!-- номер кейса -->
+                <h2 class="numberOfCase" style="color: #fec746; font-size: 4vw">
+                  01.
+                </h2>
+                <!-- что было сделано для заказчика,
+               заголовок карточки -->
+                <h2 class="whatYouDo" style="font-size: 4vw">
+                  Сделаем так-то так так
+                </h2>
+              </div>
+              <!-- нижняя часть текста -->
+              <div class="down">
+                <!-- блок с названием и картинкой заказчика -->
+                <div class="companyName flex">
+                  <img
+                    src="img/tree.png"
+                    alt="company logo"
+                    class="companyImg"
+                  />
+                  <!-- имя компании -->
+                  <p class="companyP">Дом отдыха “Серебряный плес”</p>
+                </div>
+                <!-- описание проекта -->
+                <div class="innerText">
+                  <p class="innerP">
+                    <!-- что сделали в проекте -->
+                    Так, мы настроили показы в РСЯ для получения максимального
+                    количества бронирований по минимальной цене
+                  </p>
+                </div>
+                <!-- достигнутый результат -->
+                <div class="results">
+                  <div class="leftCol">
+                    <p class="name">доход клиента</p>
+                    <p class="results">15 336 152,10₽</p>
+                    <p class="name">потрачено</p>
+                    <p class="results">332 227,06₽</p>
+                    <p class="name">% рекламных расходов</p>
+                    <p class="results">2,17%</p>
+                  </div>
+
+                  <div class="rightCol">
+                    <p class="name">количество броней</p>
+                    <p class="results">460</p>
+                    <p class="name">цена брони</p>
+                    <p class="results">722,34₽</p>
+                    <p class="name">ROI</p>
+                    <p class="results">4515,47%</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="alignerPhoto flex">
+                <div class="photoExamples">
+                  <img
+                    src="img/kreativ1.jpg"
+                    alt=""
+                    class="imgPadd"
+                    id="rotation"
+                  />
+                  <img src="img/kreativ.jpg" alt="" class="imgPadd" />
+
+                  <video
+                    class="imgPadd"
+                    controls="controls"
+                    autoplay
+                    muted
+                    loop
+                  >
+                    <source
+                      src="img/vidKreativ.mp4"
+                      type="video/MP4;"
+                    />
+                  </video>
+                </div>
+              </div>
+            </div>
+            <!-- кнопка заказать -->
+          </div>
+        </div>
+        <a
+          href="keisy/index.html"
+          class="zakaz"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          >БОЛЬШЕ КЕЙСОВ</a
+        >
+      </div>
+
+      <!---------------------- секция с услугами --------------------------->
+      <div class="section_uslugi" id="anchor3">
+        <!-- заголовок услуги -->
+        <div class="uslName flex">
+          <div class="usl1 uslPad">
+            <div id="typed-strings">
+              <h2 class="usl-h2" style="color: #fec746">
+                УСЛУГИ УСЛУГИ УСЛУГИ
+              </h2>
+              <h2 class="usl-h2" style="color: #ad00ff">
+                УСЛУГИ УСЛУГИ УСЛУГИ
+              </h2>
+              <h2 class="usl-h2" style="color: #ff7c17">
+                УСЛУГИ УСЛУГИ УСЛУГИ
+              </h2>
+            </div>
+
+            <div class="text-typing textFont">
+              <span id="typed" style="color: #fec746; font-size: 6.94vw"></span>
+            </div>
+            <div class="text-typing1 textFont">
+              <span
+                id="typed1"
+                style="color: #ad00ff; font-size: 6.94vw"
+              ></span>
+            </div>
+            <div class="text-typing2 textFont">
+              <span
+                id="typed2"
+                style="color: #ff7c17; font-size: 6.94vw"
+              ></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- услуга 1 -->
+          <div class="usl flex">
+            <!-- картинка с лого услуги -->
+            <img
+              src="img/yandex.png"
+              alt=""
+              class="usl-logo"
+              style="z-index: 1"
+              data-aos="fade-down"
+              data-aos-duration="2000"
+            />
+
+            <!-- блок с текстом -->
+            <div class="uslBlock" data-aos="fade-up" data-aos-duration="2000">
+              <div class="uslInner">
+                <!-- название услуги -->
+                <h3 class="glow-text">Экспертная настройка Яндекс.Директ</h3>
+                <!-- текст-описание услуги -->
+                <div class="uslText">
+                  <p class="usl-p">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem consequatur impedit nobis consectetur dolorum quo
+                    beatae sint est odit iure voluptatem eos aut architecto
+                    veritatis, voluptate quidem soluta excepturi cupiditate.
+                  </p>
+                </div>
+                <!-- кнопка заказать услугу -->
+                <div class="zakazUsl">
+                  <a href="yslugi/index.html" class="zakUsl-a"
+                    >узнать больше об услуге</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- услуга 2 -->
+          <div class="usl flex">
+            <!-- блок с текстом -->
+            <div class="uslBlock" data-aos="fade-down" data-aos-duration="2000">
+              <div class="uslInner">
+                <!-- название услуги -->
+                <h3 class="glow-text1">SMM</h3>
+                <!-- текст-описание услуги -->
+                <div class="uslText">
+                  <p class="usl-p">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem consequatur impedit nobis consectetur dolorum quo
+                    beatae sint est odit iure voluptatem eos aut architecto
+                    veritatis, voluptate quidem soluta excepturi cupiditate.
+                  </p>
+                </div>
+                <!-- кнопка заказать услугу -->
+                <div class="zakazUsl">
+                  <a href="yslugi/index.html" class="zakUsl-a"
+                    >узнать больше об услуге</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- картинка с лого услуги -->
+            <img
+              src="img/smm.png"
+              alt=""
+              class="usl-logo"
+              style="z-index: 1"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            />
+          </div>
+
+          <!-- услуга 3 -->
+          <div class="usl flex">
+            <!-- картинка с лого услуги -->
+            <img
+              src="img/vk.png"
+              alt=""
+              class="usl-logo"
+              style="z-index: 1"
+              data-aos="fade-down"
+              data-aos-duration="2000"
+            />
+
+            <!-- блок с текстом -->
+            <div class="uslBlock" data-aos="fade-up" data-aos-duration="2000">
+              <div class="uslInner">
+                <!-- название услуги -->
+                <h3 class="glow-text2">
+                  Создание бизнес vk сообщества под ключ
+                </h3>
+                <!-- текст-описание услуги -->
+                <div class="uslText">
+                  <p class="usl-p">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem consequatur impedit nobis consectetur dolorum quo
+                    beatae sint est odit iure voluptatem eos aut architecto
+                    veritatis, voluptate quidem soluta excepturi cupiditate.
+                  </p>
+                </div>
+                <!-- кнопка заказать услугу -->
+                <div class="zakazUsl">
+                  <a href="yslugi/index.html" class="zakUsl-a"
+                    >узнать больше об услуге</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- услуга 4 -->
+          <div class="usl flex">
+            <!-- блок с текстом -->
+            <div class="uslBlock" data-aos="fade-down" data-aos-duration="2000">
+              <div class="uslInner">
+                <!-- название услуги -->
+                <h3 class="glow-text3">
+                  Создание статичного креатива (баннер)
+                </h3>
+                <!-- текст-описание услуги -->
+                <div class="uslText">
+                  <p class="usl-p">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolorem consequatur impedit nobis consectetur dolorum quo
+                    beatae sint est odit iure voluptatem eos aut architecto
+                    veritatis, voluptate quidem soluta excepturi cupiditate.
+                  </p>
+                </div>
+
+                <p class="videoDop">Видео креатив(15 секунд) в подарок!</p>
+                <!-- кнопка заказать услугу -->
+                <div class="zakazUsl">
+                  <a href="yslugi/index.html" class="zakUsl-a"
+                    >узнать больше об услуге</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- картинка с лого услуги -->
+            <img
+              src="img/vid.png"
+              alt=""
+              class="usl-logo"
+              style="z-index: 1"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            />
+          </div>
+
+          <!-- кнопка с заказом услуги -->
+          <div class="prodviz">
+            <a
+              href="#"
+              class="prodviz-a"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              >Продвинуть мой бизнес!</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!--------------------- секция с контактами --------------------->
+      <div class="section_Kontacts flex" id="anchor4">
+        <!-- контакты, располагаются слева -->
+        <div
+          class="left-contacts flex"
+          data-aos="fade-down"
+          data-aos-duration="2000"
+        >
+          <div class="cont1">
+            <!-- название контакта -->
+            <div class="contName"><p>телефон</p></div>
+            <!-- сам контакт -->
+            <div class="cont">
+              <a href="tel:+75151615611">+75151615611</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName"><p>почта</p></div>
+            <div class="cont">
+              <a href="mailto:pskfogn@kfdg.gg">pskfogn@kfdg.gg</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName"><p>телефон</p></div>
+            <div class="cont">
+              <a href="tel:+75151615611">+75151615611</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName"><p>почта</p></div>
+            <div class="cont">
+              <a href="mailto:pskfogn@kfdg.gg">pskfogn@kfdg.gg</a>
+            </div>
+          </div>
+        </div>
+        <div class="right-contacts" data-aos="fade-up" data-aos-duration="2000">
+          <p class="contact-p-right">контакты</p>
+          <p class="contact-p-right">контакты</p>
+          <p class="contact-p-right">контакты</p>
+          <p class="contact-p-right">контакты</p>
+          <p class="contact-p-right">контакты</p>
+          <p class="contact-p-right">контакты</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- ----------------- футер-------------------- -->
+    <footer class="foot flex">
+      <div class="footRow1 flex">
+        <img src="img/logo.png" alt="" class="footLogo" />
+        <p class="companyNAme" style="padding-top: 0.6vw">Click & Convert</p>
+      </div>
+
+      <div class="footRow2 flex" style="width: 17%">
+        <p class="footRowName" style="color: #fec746; font-size: 1.3vw">
+          Услуги
+        </p>
+        <div class="footOPtions flex">
+          <a href=yslugi/index.html" class="option1"
+            >Контекстная реклама Яндекс.Директ</a
+          >
+          <a href="yslugi/index.html" class="option1">SMM</a>
+          <a href="yslugi/index.html" class="option1"
+            >Создание бизнес vk сообщества под ключ</a
+          >
+          <a href="yslugi/index.html" class="option1"
+            >Создание статичного креатива (баннер)</a
+          >
+        </div>
+      </div>
+
+      <div class="footRow3 flex">
+        <p class="footRowName" style="color: #ad00ff; font-size: 1.3vw">
+          Контакты
+        </p>
+        <div class="footOPtions">
+          <div class="cont1">
+            <!-- название контакта -->
+            <div class="contName option"><p>телефон</p></div>
+            <!-- сам контакт -->
+            <div class="cont">
+              <a href="tel:+75151615611">+75151615611</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName option"><p>почта</p></div>
+            <div class="cont">
+              <a href="mailto:pskfogn@kfdg.gg">pskfogn@kfdg.gg</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName option"><p>телефон</p></div>
+            <div class="cont">
+              <a href="tel:+75151615611">+75151615611</a>
+            </div>
+          </div>
+          <div class="cont1">
+            <div class="contName option"><p>почта</p></div>
+            <div class="cont">
+              <a href="mailto:pskfogn@kfdg.gg">pskfogn@kfdg.gg</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
