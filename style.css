@@ -940,9 +940,9 @@ video {
   padding-top: 1vw;
 }
 
-/* @media */
+/* ----------------------------------------------------- @media -----------------------------------------*/
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 400px) {
   .container {
     padding: 2vw 5vw 0;
   }
