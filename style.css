@@ -942,7 +942,7 @@ video {
 
 /* @media */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 470px) {
   .container {
     padding: 2vw 5vw 0;
   }
