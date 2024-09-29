@@ -1,5 +1,11 @@
 AOS.init();
 
+ AOS.init({
+    disable: function () {
+      return window.innerWidth < 455; // Отключить на экранах меньше 455px
+    }
+  });
+
 /*  */
 $(document).ready(function() {
     $(document).on('mousemove', function(e) {
