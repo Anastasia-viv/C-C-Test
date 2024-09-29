@@ -1074,7 +1074,7 @@
     }
 
     .opisText {
-      font-size: 10px;
+      font-size: 14px;
       font-family: "Paizolla", sans-serif;
       padding: 4vw 10px 4vw;
     }
@@ -1175,7 +1175,7 @@
     }
 
     .innerText {
-      font-size: 9px;
+      font-size: 12px;
       margin: 4px 0 15px;
     }
 
@@ -1189,7 +1189,7 @@
 
     .results {
       text-align: left;
-      font-size: 10px;
+      font-size: 114px;
     }
 
     .name {
@@ -1218,12 +1218,12 @@
     }
 
     .usl-p {
-      font-size: 9px;
+      font-size: 11px;
       font-weight: lighter;
     }
 
     .zakUsl-a {
-      font-size: 7px;
+      font-size: 9px;
       padding: 1vw 8vw;
     }
 
@@ -1277,7 +1277,7 @@
     }
 
     .opisText {
-      font-size: 11px;
+      font-size: 14px;
       font-family: "Paizolla", sans-serif;
       padding: 4vw 10px 4vw;
     }
@@ -1374,12 +1374,12 @@
     }
 
     .innerText {
-      font-size: 12px;
+      font-size: 14px;
       margin: 4px 0 15px;
     }
 
     .companyP {
-      font-size: 7px;
+      font-size: 9px;
     }
 
     .upper {
@@ -1388,7 +1388,7 @@
 
     .results {
       text-align: left;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     .name {
@@ -1428,7 +1428,7 @@
     }
 
     .zakUsl-a {
-      font-size: 9px;
+      font-size: 11px;
       padding: 1vw 8vw;
     }
 
