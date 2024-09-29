@@ -125,7 +125,7 @@ p {
 
 /* --------------------------- header ---------------------------- */
 .header {
-  background-image: url(img/bg1.png);
+  background-image: url(/img/bg1.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1059,7 +1059,7 @@ video {
 
   .header {
     background-repeat: repeat;
-    background-image: url(img/Group1.png);
+    background-image: url(../img/Group1.png);
   }
   .one {
     max-width: 8%;
