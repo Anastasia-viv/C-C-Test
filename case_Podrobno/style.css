@@ -196,17 +196,17 @@ p {
 
 /* main */
 
-.upper img{
+.upper img {
   max-width: 8vw;
   margin: 0 2vw 0 0;
 }
 
-.upper h3{
+.upper h3 {
   font-family: "KvRegular", sans-serif;
   font-size: 2vw;
 }
 
-.upper{
+.upper {
   align-items: center;
   margin: 0 0 4vw;
 }
@@ -270,7 +270,7 @@ p {
 .foot {
   background-color: #000;
   border-top: #fff solid 1px;
-  flex-direction: row;
+  flex-direction: column;
   text-align: center;
 
   justify-content: space-between;
@@ -278,6 +278,11 @@ p {
   padding-right: calc(100% / 8);
   padding-top: 5vw;
   padding-bottom: 5vw;
+}
+
+.iconsFooter {
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .footRow1 {
@@ -363,48 +368,355 @@ p {
   background-position-y: center;
 }
 
-
 /*  /// адаптив ///// */
-@media screen and (max-width: 450px){
-    .case{
-        background-position-x: 55vw;
-        background-position-y: center;
-        background-size: 105vw;
-        background-blend-mode: lighten;
-    }
+@media screen and (max-width: 450px) and (min-width: 319px){
+  .container {
+    padding: 2vw 11vw 08vw;
+  }
 
-    .logoHeader{
-        width: 7vw;
-        height: 9.5vw;
-    }
+  .header {
+    background-repeat: repeat;
+    background-image: url(img/Group1.png);
+  }
 
-    .notiInner {
-        padding: 0vw 19vw 0vw 4vw;
-    }
+ /*  .logoHeader {
+    max-height: 50%;
+    max-width: 9%;
+  } */
+  .notification {
+    max-width: 70%;
+    min-width: 70%;
+    max-height: 25vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    text-align: center;
+    border-radius: 4.5vw;
+  }
 
-    .notification{
-        border-radius: 5vw;
-    }
+  .notificationText {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /*    width: 70%; */
+    align-items: center;
+  }
+
+  .logoHeader {
+    max-height: 50%;
+  }
+
+  .notiInner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+  }
+
+  .notiText-1 {
+    font-size: 2vw;
+    color: #adadad;
+    padding-left: 4vw;
+  }
+
+  .notiText-2 {
+    font-size: 2.5vw;
+  }
+
+  .headerInner {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .case {
+    background-position-x: 55vw;
+    background-position-y: center;
+    background-size: 105vw;
+    background-blend-mode: lighten;
+  }
+
+  .logoHeader {
+    width: 5vw;
+    height: 9.5vw;
+  }
+
+  .notiInner {
+    padding: 0vw 11vw 0vw 4vw;
+  }
+
+  .notification {
+    border-radius: 5vw;
+  }
+
+  .caseInner {
+    font-size: 11px;
+  }
+
+  .borderClass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+  }
+
+  .backspace a {
+    font-size: 9px;
+  }
+
+  .back {
+    max-height: 10px;
+    max-width: 4px;
+  }
+  /*  */
+  .iconsFooter svg {
+    width: 45%;
+  }
+
+  .footLogo {
+    width: 25px;
+    height: auto;
+  }
+
+  .footRow3 {
+    width: 70%;
+  }
+
+  .footRow3 p {
+    font-size: 12px;
+    color: #ffffff;
+  }
+
+  .companyNAme {
+    font-size: 12px;
+  }
+
+  .rights {
+    font-size: 9px;
+    margin-top: 7%;
+    font-family: "Paizolla", sans-serif;
+    font-weight: lighter;
+  }
+
+  .foot1 {
+    justify-content: space-between;
+  }
 }
 
-@media screen and (max-width: 768px){
-    .case{
-        background-position-x: 55vw;
-        background-position-y: center;
-        background-size: 105vw;
-        background-blend-mode: lighten;
-    }
+@media screen and (max-width: 768px) and (min-width: 451px) {
+  .case {
+    background-position-x: 55vw;
+    background-position-y: center;
+    background-size: 105vw;
+    background-blend-mode: lighten;
+  }
 
-    .logoHeader{
-        width: 7vw;
-        height: 9.5vw;
-    }
+  .header {
+    background-repeat: repeat;
+    background-image: url(img/Group1.png);
+  }
 
-    .notiInner {
-        padding: 0vw 19vw 0vw 4vw;
-    }
+ /*  .logoHeader {
+    max-height: 50%;
+    max-width: 9%;
+  } */
+  .notification {
+    max-width: 75%;
+    min-width: 75%;
+    max-height: 25vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+    text-align: center;
+    border-radius: 4.5vw;
+  }
 
-    .notification{
-        border-radius: 4.3vw;
-    }
+  .notificationText {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /*    width: 70%; */
+    align-items: center;
+  }
+
+  .logoHeader {
+    max-height: 50%;
+  }
+
+  .notiInner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+  }
+
+  .notiText-1 {
+    font-size: 2vw;
+    color: #adadad;
+    padding-left: 4vw;
+  }
+
+  .notiText-2 {
+    font-size: 2.5vw;
+  }
+
+  .headerInner {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .case {
+    background-position-x: 55vw;
+    background-position-y: center;
+    background-size: 105vw;
+    background-blend-mode: lighten;
+  }
+
+  .logoHeader {
+    width: 5vw;
+    height: 9.5vw;
+  }
+
+  .notiInner {
+    padding: 0vw 11vw 0vw 4vw;
+  }
+
+  .notification {
+    border-radius: 5vw;
+  }
+
+  .caseInner {
+    font-size: 11px;
+  }
+
+  .borderClass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+  }
+
+  .backspace a {
+    font-size: 9px;
+  }
+
+  .back {
+    max-height: 10px;
+    max-width: 4px;
+  }
+  /*  */
+  .iconsFooter svg {
+    width: 45%;
+  }
+
+  .footLogo {
+    width: 25px;
+    height: auto;
+  }
+
+  .footRow3 {
+    width: 60%;
+  }
+
+  .footRow3 p {
+    font-size: 12px;
+    color: #ffffff;
+  }
+
+  .foot1 {
+    justify-content: space-between;
+  }
+
+  .companyNAme {
+    font-size: 12px;
+  }
+
+  .rights {
+    font-size: 9px;
+    margin-top: 7%;
+    font-family: "Paizolla", sans-serif;
+    font-weight: lighter;
+  }
+}
+
+@media screen and (min-width: 769px) {
+   /*  */
+   .iconsFooter svg {
+    width: 35%;
+  }
+
+  .foot1 {
+    justify-content: space-between;
+  }
+
+  .footLogo {
+    width: 85px;
+    height: auto;
+  }
+
+  .footRow3 {
+    width: 70%;
+  }
+
+  .footRow3 p {
+    font-size: 24px;
+    color: #ffffff;
+  }
+
+  .companyNAme {
+    font-size: 24px;
+  }
+
+  .rights {
+    font-size: 20px;
+    margin-top: 7%;
+    font-family: "Paizolla", sans-serif;
+    font-weight: lighter;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    padding-left: calc(100% / 7);
+    padding-right: calc(100% / 7);
+  }
+
+   /*  */
+   .iconsFooter svg {
+    width: 35%;
+  }
+
+  .foot1 {
+    justify-content: space-between;
+  }
+
+  .footLogo {
+    width: 85px;
+    height: auto;
+  }
+
+  .footRow3 {
+    width: 70%;
+  }
+
+  .footRow3 p {
+    font-size: 24px;
+    color: #ffffff;
+  }
+
+  .companyNAme {
+    font-size: 24px;
+  }
+
+  .rights {
+    font-size: 20px;
+    margin-top: 7%;
+    font-family: "Paizolla", sans-serif;
+    font-weight: lighter;
+  }
 }
