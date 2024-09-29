@@ -1,2162 +1,2162 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /*   background: #000; */
-  max-width: 100%;
-  /*   min-width: fit-content; */
-}
-html {
-  cursor: none;
-}
-
-#circularcursor {
-  background-color: transparent;
-  border: 1px solid rgb(255, 255, 255);
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  position: absolute;
-  z-index: 10000000000000;
-}
-
-/* общие */
-
-@font-face {
-  font-family: "KvLight";
-  src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Thin.otf")
-    format("opentype");
-}
-
-@font-face {
-  font-family: "kvRegular";
-  src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Regular.otf")
-    format("opentype");
-}
-
-@font-face {
-  font-family: "kvMedium";
-  src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Medium.otf")
-    format("opentype");
-}
-
-@font-face {
-  font-family: "kvBald";
-  src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold.otf")
-    format("opentype");
-}
-
-@font-face {
-  font-family: "Paizolla";
-  src: url("fonts/Piazzolla.ttf") format("opentype");
-}
-
-.container {
-  /*    padding: 32px 208px; */
-  padding-left: calc(100% / 8);
-  padding-right: calc(100% / 8);
-  padding-top: calc(100% / 55);
-  /*  width: 100%; */
-}
-
-a {
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-  cursor: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  padding: 0;
-  margin: 0;
-  color: #fff;
-  cursor: none;
-}
-
-.flex {
-  display: flex;
-}
-
-:root {
-  --yellowcol: #fec746;
-  --purplecol: #ad00ff;
-  --orangecol: #ff7c17;
-}
-
-#preloader {
-  position: fixed; /* Фиксированное позиционирование */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 219, 136),
-    rgb(255, 161, 90),
-    rgb(201, 86, 255)
-  );
-  display: flex; /* Используем flexbox для центрирования */
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-  z-index: 9999; /* Обеспечиваем, чтобы преаплоадер был выше других элементов */
-}
-
-#preloader img {
-  width: 100px; /* Размер изображения */
-  animation: spin 2s linear infinite; /* Анимация вращения */
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*   background: #000; */
+    max-width: 100%;
+    /*   min-width: fit-content; */
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* --------------------------- header ---------------------------- */
-.header {
-  background-image: url(/img/bg1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.headerInner {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.notification {
-  background: linear-gradient(
-    110deg,
-    rgb(255, 255, 255, 0.4),
-    rgb(115, 115, 115, 0.1)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  border-radius: 2.0833vw;
-}
-/*  */
-.burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-}
-
-.line {
-  height: 2px;
-  width: 100%;
-  background-color: white;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -280px; /* Скрываем меню за пределами экрана */
-  width: 280px;
-  height: 100%;
-  background: linear-gradient(
-    110deg,
-    rgba(255, 255, 255, 0.7),
-    rgba(115, 115, 115, 0.5)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  z-index: 100000;
-  transition: right 0.7s ease; /* Плавный переход */
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 35px; /* Отступы для меню */
-}
-
-.sidebar ul li {
-  margin-bottom: 15px; /* Отступы между пунктами */
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: rgb(255, 255, 255); /* Цвет текста */
-  font-weight: 200;
-  font-family: "Paizolla", sans-serif;
-}
-
-.sidebar.active {
-  right: 0; /* Показываем меню */
-}
-
-.li1 {
-  align-items: center;
-  padding-bottom: 7%;
-  border-bottom: #fff solid 1px;
-}
-
-.miniText {
-  font-weight: lighter;
-  font-family: "Paizolla", sans-serif;
-  font-size: 10px;
-  line-height: 1.5em;
-}
-
-/* .li svg{
-  max-width: 30px;
-  height: auto;
-} */
-
-.icons {
-  justify-content: space-between;
-  margin-top: 72%;
-}
-
-.logoHeader1 {
-  max-width: 20%;
-  padding-right: 6%;
-}
-/*  */
-
-.logoHeader {
-  max-height: 70%;
-  max-width: 80%;
-}
-
-.notiInner {
-  padding: 0.4167vw 5.2083vw 0.4167vw 2.0833vw;
-  align-items: center;
-}
-
-.notiText-1 {
-  font-size: 0.7vw;
-  font-weight: 200;
-  font-family: "Paizolla", sans-serif;
-}
-
-.notiText-2 {
-  font-size: 1.25vw;
-  font-weight: 300;
-  font-stretch: semi-condensed;
-  font-family: "kvLight", sans-serif;
-}
-
-.logoHeader {
-  padding-right: 0.625vw;
-}
-
-.link a {
-  color: #fff;
-  cursor: none;
-  font-family: "Paizolla", sans-serif;
-  font-weight: 100;
-}
-
-.link a:hover {
-  background-image: linear-gradient(35deg, #fec746, #ff7c17);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition: ease-in 1s;
-  cursor: none;
-}
-
-/* ------------------- main ----------- */
-
-/* первая страница */
-
-.main {
-  background-color: #000000;
-}
-
-.section_FirstPage {
-  font-size: 5vw;
-  flex-wrap: wrap;
-  align-content: center;
-  flex-direction: column;
-  margin: 12% 0;
-  font-family: "kvLight", san-serif;
-  /*   width: 77%; */
-  line-height: 1.3em;
-}
-
-.leftAlign {
-  text-align: left;
-}
-
-.centerAlign {
-  text-align: center;
-}
-
-.rightAlign {
-  text-align: right;
-}
-
-.centerBlock {
-  justify-content: center;
-}
-
-.one {
-  max-width: 3%;
-  margin-bottom: calc(10% / 3);
-  max-height: 30%;
-}
-
-.arrow {
-  text-align: center;
-  padding-bottom: 12%;
-}
-
-/* s */
-
-/* .section_FirstPage {
-  font-size: 75px;
-  text-align: center;
-  color: #fff;
-  font-family: "kvLight", san-serif;
-  overflow: hidden; 
-  border-right: .15em solid orange;
-  white-space: nowrap; 
-  margin: 12% 0; 
-  letter-spacing: .15em; 
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end ;
-}
-
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  70% { border-color: orange }} */
-
-/* --------раздел Кто Мы -------- */
-
-.whoWeAre {
-  color: #adadad;
-  font-size: 12vw;
-  padding: 0;
-  margin: 0;
-  line-height: calc(100% / 1.5);
-  font-family: "Paizolla", sans-serif;
-}
-
-.bgFirstPage {
-  z-index: 0;
-}
-
-.opisanie {
-  z-index: 100;
-  position: absolute;
-  background: linear-gradient(
-    110deg,
-    rgba(255, 255, 255, 0.6),
-    rgb(115, 115, 115, 0.2)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  border-radius: 2.0833vw;
-  align-items: center;
-
-  margin-left: calc(100% / 9);
-  margin-right: calc(100% / 9);
-}
-
-.section_KtoMy {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.opis {
-  font-size: 6.3vw;
-  text-align: center;
-  font-family: "kvLight", san-serif;
-  padding: 1.7vw 0 2.4vw;
-}
-
-.opisText {
-  font-size: 1.9vw;
-  font-family: "Paizolla", sans-serif;
-  padding: 1.5vw 0 3.7vw;
-  text-align: justify;
-}
-
-.ktoIn {
-  background-image: url(img/glow.png);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ---------- почему мы ------------- */
-
-.section_Keisy {
-  margin: 17vw 0;
-  text-align: center;
-}
-
-.runningStr {
-  font-size: 6vw;
-  color: var(--yellowcol);
-  font-family: "kvRegular", sans-serif;
-}
-
-.side {
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  background-image: linear-gradient(
-    360deg,
-    var(--yellowcol),
-    var(--orangecol),
-    var(--purplecol)
-  );
-  background-clip: text;
-  -moz-background-clip: text;
-  color: transparent;
-  font-family: "kvBald", sans-serif;
-  font-size: 13.5vw;
-  font-weight: bolder;
-  /*   line-height: 1.2em;
-  letter-spacing: 5vw; */
-}
-
-.numberOfCase {
-  font-size: 4vw;
-}
-
-.sideText {
-  flex-direction: column;
-  max-width: min-content;
-  justify-content: space-evenly;
-}
-
-.alignersPhoto {
-  justify-content: center;
-  align-items: center;
-}
-
-.photoExamples {
-  height: min-content;
-  display: grid;
-  grid-template-rows: 35vw 35vw;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  align-items: center;
-  justify-items: stretch;
-  grid-column: 1 / 2;
-}
-
-.imgPadd {
-  max-height: 35vw;
-  max-width: auto;
-  object-fit: contain;
-}
-
-video {
-  max-height: 35vw;
-  max-width: auto;
-  object-fit: contain;
-}
-
-.companyName {
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  font-family: "Paizolla", sans-serif;
-  font-weight: lighter;
-  margin-bottom: 1.1vw;
-}
-
-.companyName img {
-  max-width: 3vw;
-  height: auto;
-}
-
-/* .imgPadd{
-
-  max-width: 15vw;
-  max-height: 20vw;
-} */
-
-.rightSideBlock {
-  flex-direction: row;
-  margin-left: calc(100% / 10);
-  margin-right: calc(100% / 8);
-  margin-top: calc(100% / 55);
-  margin-bottom: calc(100% / 18);
-}
-
-.whatYouDo {
-  font-size: 4vw;
-}
-
-/* .photoExamples img,
-.photoExamples video{
-  width: 50%;
-} */
-
-.zakaz {
-  background: linear-gradient(
-    110deg,
-    rgb(255, 255, 255, 0.7),
-    rgb(115, 115, 115, 0.4)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  border-radius: 2vw;
-
-  color: #570080;
-
-  font-size: 4vw;
-  font-family: "kvMedium", sans-serif;
-
-  padding: 2vw 19vw;
-  margin-top: 15vw;
-}
-
-.caseInner a {
-  align-items: center;
-  justify-content: center;
-}
-
-.companyP {
-  font-size: 1vw;
-  font-family: "Paizolla", san-serif;
-  font-weight: lighter;
-}
-
-.zakaz:hover {
-  background: linear-gradient(
-    35deg,
-    var(--yellowcol),
-    var(--orangecol),
-    var(--purplecol)
-  );
-  color: #fffdd5;
-  /*   background-color: var(--orangecol); */
-  transition: 1.8s;
-  cursor: none;
-}
-
-.case1 {
-  margin-top: 5.8vw;
-}
-
-.caseInner {
-  padding: 5vw;
-
-  flex-direction: column;
-  justify-content: center;
-
-  background: linear-gradient(
-    110deg,
-    rgb(255, 255, 255, 0.4),
-    rgb(115, 115, 115, 0.1)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  border-radius: 2.083vw;
-}
-
-.upper {
-  text-align: left;
-  font-family: "kvRegular", sans-serif;
-  margin-bottom: 9vw;
-}
-
-.down {
-  text-align: justify;
-}
-
-.results {
-  flex-direction: row;
-  justify-content: space-evenly;
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 2fr));
-  grid-gap: 2rem;
-}
-
-.name {
-  font-family: "Paizolla", sans-serif;
-  font-size: 1vw;
-  font-weight: lighter;
-  color: #c5c5c5;
-}
-
-.results {
-  font-family: "Paizolla", sans-serif;
-  font-size: 1.25vw;
-  font-weight: lighter;
-  color: #ffffff;
-  padding-top: 0.1vw;
-  padding-bottom: 0.5vw;
-}
-
-.innerText {
-  padding-bottom: 2vw;
-  font-family: "Paizolla", sans-serif;
-  font-weight: lighter;
-  font-size: 1.4vw;
-}
-
-/* ---------- услуги --------- */
-
-.textFont {
-  font-family: "kvBald", san-serif;
-}
-
-.uslName1 {
-  z-index: 1;
-  background-image: linear-gradient(
-    150deg,
-    var(--yellowcol),
-    var(--orangecol),
-    var(--purplecol)
-  );
-  background-clip: text;
-  -moz-background-clip: text;
-  color: transparent;
-  font-size: 4vw;
-  font-weight: bolder;
-  filter: blur(6px);
-}
-
-.glow-text,
-.glow-text1,
-.glow-text2,
-.glow-text3 {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  font-weight: lighter;
-  color: #fff;
-  font-family: "kvRegular", san-serif;
-  font-size: 2.6vw;
-}
-
-.glow-text::after {
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-weight: lighter;
-  content: "Экспертная настройка Яндекс.Директ";
-  color: #fff;
-  /*  display: inline-block; */
-  font-size: 2.6vw;
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  filter: blur(20px);
-  margin: 0 5vw;
-  -webkit-text-fill-color: transparent;
-}
-
-.glow-text1::after {
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-weight: lighter;
-  content: "SMM";
-  color: #fff;
-  /*  display: inline-block; */
-  font-size: 2.6vw;
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  filter: blur(20px);
-  margin: 0 13vw;
-  -webkit-text-fill-color: transparent;
-}
-
-.glow-text2::after {
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-weight: lighter;
-  content: "Создание бизнес vk сообщества под ключ";
-  color: #fff;
-  /*  display: inline-block; */
-  font-size: 2.6vw;
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  filter: blur(20px);
-  margin: 0 5vw;
-  -webkit-text-fill-color: transparent;
-}
-
-.glow-text3::after {
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-weight: lighter;
-  content: "Создание статичного креатива (баннер)";
-  color: #fff;
-  /*  display: inline-block; */
-  font-size: 2.6vw;
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  filter: blur(20px);
-  /*   margin: 0 6vw; */
-  -webkit-text-fill-color: transparent;
-}
-
-.videoDop {
-  font-size: 2.1vw;
-  font-family: "kvRegular", san-serif;
-  margin: 2.5vw 0;
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.usl {
-  margin: 7vw 0;
-}
-
-.uslBlock {
-  background: linear-gradient(
-    110deg,
-    rgb(255, 255, 255, 0.4),
-    rgb(115, 115, 115, 0.1)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  border-radius: 2.0833vw;
-  max-width: 65vw;
-  /*   max-height: 75vw; */
-  z-index: 3;
-  text-align: center;
-}
-
-.usl-logo {
-  /*  max-width: 25vw; */
-  max-height: 25vw;
-}
-
-.uslText {
-  font-size: 1.4vw;
-  font-family: "Paizolla", san-serif;
-  /*   font-weight: lighter; */
-  padding-top: 5vw;
-  text-align: justify;
-}
-
-.uslInner {
-  padding: 3vw;
-}
-
-.zakUsl-a {
-  background-image: linear-gradient(
-    80deg,
-    var(--yellowcol),
-    var(--orangecol),
-    var(--purplecol)
-  );
-  color: #fff;
-  font-size: 1.5vw;
-  font-family: "Paizolla", sans-serif;
-  border-radius: 1vw;
-  padding: 0.7vw calc(100% / 4);
-}
-
-.zakUsl-a:hover {
-  color: #fff;
-  transition: 1.4s;
-  border: #fff solid 2px;
-  cursor: none;
-}
-
-.zakazUsl {
-  padding-top: 2vw;
-}
-
-.prodviz {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.prodviz-a {
-  background: linear-gradient(
-    110deg,
-    rgb(255, 255, 255, 0.7),
-    rgb(115, 115, 115, 0.4)
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: #fff solid 1px;
-  border-radius: 2vw;
-
-  color: #570080;
-
-  font-size: 4vw;
-  font-family: "kvMedium", sans-serif;
-
-  padding: 2vw 11vw;
-  /* margin-top: 15vw; */
-  justify-content: center;
-  text-align: center;
-}
-
-.prodviz-a {
-  font-family: "kvMedium", san-serif;
-}
-
-.prodviz-a:hover {
-  background: linear-gradient(
-    35deg,
-    var(--yellowcol),
-    var(--orangecol),
-    var(--purplecol)
-  );
-  color: #fffdd5;
-  /*   background-color: var(--orangecol); */
-  transition: 1.8s;
-  cursor: none;
-}
-
-/* ------------ контакты ------------ */
-.section_Kontacts {
-  padding-bottom: 12vw;
-  margin-top: 12vw;
-}
-
-.left-contacts {
-  flex-direction: column;
-  font-size: 2.5vw;
-  color: #fff;
-  text-align: center;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 50%;
-  font-weight: lighter;
-  font-family: "Paizolla", sans-serif;
-}
-
-.left-contacts a {
-  color: #fff;
-}
-
-.left-contacts a:hover {
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: 0.6s;
-  cursor: none;
-}
-
-.right-contacts {
-  font-size: 9.8vw;
-  width: 50%;
-  font-family: "kvBald", sans-serif;
-  line-height: 0.8em;
-  padding: 0;
-  margin: 0;
-  left: 0;
-  top: 0;
-}
-.contact-p-right {
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* ----------- footer ---------- */
-.foot {
-  background-color: #000;
-  border-top: #fff solid 1px;
-  flex-direction: column;
-  text-align: center;
-
-  justify-content: space-between;
-  padding-left: calc(100% / 8);
-  padding-right: calc(100% / 8);
-  padding-top: 5vw;
-  padding-bottom: 5vw;
-}
-
-.footRow1 {
-  font-family: "KvRegular", sans-serif;
-  font-size: 1.1vw;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.footRowName {
-  font-family: "KvRegular", sans-serif;
-  font-size: 1.3vw;
-  padding-bottom: 1vw;
-}
-
-.footRow2,
-.footRow3 {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.footRow2 a,
-.footRow3 a {
-  color: #fff;
-  font-size: 1.15vw;
-  font-family: "Paizolla", san-serif;
-  margin-top: 1vw;
-}
-
-.footOPtions {
-  flex-direction: column;
-}
-
-.option1 {
-  padding-top: 1vw;
-}
-
-.footRow2 p,
-.footRow3 p {
-  color: #fff;
-  font-size: 1.15vw;
-  font-family: "Paizolla", san-serif;
-}
-
-.footRow3 a:hover {
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: 0.6s;
-  cursor: none;
-}
-
-.footRow2 a:hover {
-  background-image: linear-gradient(
-    35deg,
-    rgb(255, 195, 57),
-    rgb(255, 111, 0),
-    rgb(174, 0, 255)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: 0.6s;
-  cursor: none;
-}
-
-.option {
-  padding-top: 1vw;
-}
-
-.foot1 {
-  justify-content: space-between;
-}
-
-/* @media */
-
-@media screen and (max-width: 376px) {
-  .burger {
-    display: flex;
-    width: 30px;
-    height: 15px;
-    padding-left: 4%;
+  html {
+    cursor: none;
   }
 
-  .sidebar {
-    right: -280px; /* Скрываем меню по умолчанию */
+  #circularcursor {
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: absolute;
+    z-index: 10000000000000;
   }
 
-  .sidebar.active {
-    right: 0; /* Показываем меню при активации */
+  /* общие */
+
+  @font-face {
+    font-family: "KvLight";
+    src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Thin.otf")
+      format("opentype");
+  }
+
+  @font-face {
+    font-family: "kvRegular";
+    src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Regular.otf")
+      format("opentype");
+  }
+
+  @font-face {
+    font-family: "kvMedium";
+    src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Medium.otf")
+      format("opentype");
+  }
+
+  @font-face {
+    font-family: "kvBald";
+    src: url("fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold.otf")
+      format("opentype");
+  }
+
+  @font-face {
+    font-family: "Paizolla";
+    src: url("fonts/Piazzolla.ttf") format("opentype");
   }
 
   .container {
-    padding: 2vw 5vw 0;
+    /*    padding: 32px 208px; */
+    padding-left: calc(100% / 8);
+    padding-right: calc(100% / 8);
+    padding-top: calc(100% / 55);
+    /*  width: 100%; */
   }
 
+  a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    cursor: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    cursor: none;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  :root {
+    --yellowcol: #fec746;
+    --purplecol: #ad00ff;
+    --orangecol: #ff7c17;
+  }
+
+  #preloader {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 219, 136),
+      rgb(255, 161, 90),
+      rgb(201, 86, 255)
+    );
+    display: flex; /* Используем flexbox для центрирования */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    z-index: 9999; /* Обеспечиваем, чтобы преаплоадер был выше других элементов */
+  }
+
+  #preloader img {
+    width: 100px; /* Размер изображения */
+    animation: spin 2s linear infinite; /* Анимация вращения */
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* --------------------------- header ---------------------------- */
   .header {
-    background-repeat: repeat;
-    background-image: url(../img/Group1.png);
-  }
-  .one {
-    max-width: 8%;
-  }
-  .whoWeAre {
-    color: #adadad;
-    font-size: 12.6vw;
-  }
-
-  .opis {
-    font-size: 7.3vw;
-  }
-
-  .opisText {
-    font-size: 10px;
-    font-family: "Paizolla", sans-serif;
-    padding: 4vw 10px 4vw;
-  }
-
-  .section_FirstPage {
-    font-size: 6.7vw;
-  }
-
-  .link {
-    display: none;
-  }
-
-  .notification {
-    max-width: 80%;
-    min-width: 80%;
-    max-height: 13vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    text-align: center;
-    border-radius: 4.5vw;
-  }
-
-  .notificationText {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    /*    width: 70%; */
-    align-items: center;
-  }
-
-  .logoHeader {
-    max-height: 50%;
-  }
-
-  .notiInner {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-  }
-
-  .notiText-1 {
-    font-size: 2vw;
-    color: #adadad;
-    padding-left: 4vw;
-    padding-right: 2vw;
-  }
-
-  .notiText-2 {
-    font-size: 3vw;
+    background-image: url(img/bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .headerInner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .notification {
+    background: linear-gradient(
+      110deg,
+      rgb(255, 255, 255, 0.4),
+      rgb(115, 115, 115, 0.1)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    border-radius: 2.0833vw;
+  }
+  /*  */
+  .burger {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+  }
+
+  .line {
+    height: 2px;
+    width: 100%;
+    background-color: white;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px; /* Скрываем меню за пределами экрана */
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(115, 115, 115, 0.5)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    z-index: 100000;
+    transition: right 0.7s ease; /* Плавный переход */
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 35px; /* Отступы для меню */
+  }
+
+  .sidebar ul li {
+    margin-bottom: 15px; /* Отступы между пунктами */
+  }
+
+  .sidebar ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Цвет текста */
+    font-weight: 200;
+    font-family: "Paizolla", sans-serif;
+  }
+
+  .sidebar.active {
+    right: 0; /* Показываем меню */
+  }
+
+  .li1 {
+    align-items: center;
+    padding-bottom: 7%;
+    border-bottom: #fff solid 1px;
+  }
+
+  .miniText {
+    font-weight: lighter;
+    font-family: "Paizolla", sans-serif;
+    font-size: 10px;
+    line-height: 1.5em;
+  }
+
+  /* .li svg{
+    max-width: 30px;
+    height: auto;
+  } */
+
+  .icons {
+    justify-content: space-between;
+    margin-top: 72%;
+  }
+
+  .logoHeader1 {
+    max-width: 20%;
+    padding-right: 6%;
+  }
+  /*  */
+
+  .logoHeader {
+    max-height: 70%;
+    max-width: 80%;
+  }
+
+  .notiInner {
+    padding: 0.4167vw 5.2083vw 0.4167vw 2.0833vw;
+    align-items: center;
+  }
+
+  .notiText-1 {
+    font-size: 0.7vw;
+    font-weight: 200;
+    font-family: "Paizolla", sans-serif;
+  }
+
+  .notiText-2 {
+    font-size: 1.25vw;
+    font-weight: 300;
+    font-stretch: semi-condensed;
+    font-family: "kvLight", sans-serif;
+  }
+
+  .logoHeader {
+    padding-right: 0.625vw;
+  }
+
+  .link a {
+    color: #fff;
+    cursor: none;
+    font-family: "Paizolla", sans-serif;
+    font-weight: 100;
+  }
+
+  .link a:hover {
+    background-image: linear-gradient(35deg, #fec746, #ff7c17);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: ease-in 1s;
+    cursor: none;
+  }
+
+  /* ------------------- main ----------- */
+
+  /* первая страница */
+
+  .main {
+    background-color: #000000;
+  }
+
+  .section_FirstPage {
+    font-size: 5vw;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    margin: 12% 0;
+    font-family: "kvLight", san-serif;
+    /*   width: 77%; */
+    line-height: 1.3em;
+  }
+
+  .leftAlign {
+    text-align: left;
+  }
+
+  .centerAlign {
+    text-align: center;
+  }
+
+  .rightAlign {
+    text-align: right;
+  }
+
+  .centerBlock {
     justify-content: center;
   }
 
-  .arrow img {
-    max-width: 3vw;
+  .one {
+    max-width: 3%;
+    margin-bottom: calc(10% / 3);
+    max-height: 30%;
   }
 
-  /* .arrow {
-    padding-bottom: 3%;
-  } */
-  /*  */
+  .arrow {
+    text-align: center;
+    padding-bottom: 12%;
+  }
 
-  .rightSideBlock {
-    flex-direction: row;
-    margin: 2vw 7vw 0 0vw;
+  /* s */
+
+  /* .section_FirstPage {
+    font-size: 75px;
+    text-align: center;
+    color: #fff;
+    font-family: "kvLight", san-serif;
+    overflow: hidden; 
+    border-right: .15em solid orange;
+    white-space: nowrap; 
+    margin: 12% 0; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end ;
+  }
+
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    70% { border-color: orange }} */
+
+  /* --------раздел Кто Мы -------- */
+
+  .whoWeAre {
+    color: #adadad;
+    font-size: 12vw;
+    padding: 0;
+    margin: 0;
+    line-height: calc(100% / 1.5);
+    font-family: "Paizolla", sans-serif;
+  }
+
+  .bgFirstPage {
+    z-index: 0;
+  }
+
+  .opisanie {
+    z-index: 100;
+    position: absolute;
+    background: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.6),
+      rgb(115, 115, 115, 0.2)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    border-radius: 2.0833vw;
+    align-items: center;
+
+    margin-left: calc(100% / 9);
+    margin-right: calc(100% / 9);
+  }
+
+  .section_KtoMy {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .opis {
+    font-size: 6.3vw;
+    text-align: center;
+    font-family: "kvLight", san-serif;
+    padding: 1.7vw 0 2.4vw;
+  }
+
+  .opisText {
+    font-size: 1.9vw;
+    font-family: "Paizolla", sans-serif;
+    padding: 1.5vw 0 3.7vw;
+    text-align: justify;
+  }
+
+  .ktoIn {
+    background-image: url(img/glow.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---------- почему мы ------------- */
+
+  .section_Keisy {
+    margin: 17vw 0;
+    text-align: center;
+  }
+
+  .runningStr {
+    font-size: 6vw;
+    color: var(--yellowcol);
+    font-family: "kvRegular", sans-serif;
   }
 
   .side {
-    font-size: 22vw;
-  }
-
-  .caseInner {
-    padding: 8vw 6vw;
-  }
-
-  .whatYouDo {
-    font-size: 7vw;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    background-image: linear-gradient(
+      360deg,
+      var(--yellowcol),
+      var(--orangecol),
+      var(--purplecol)
+    );
+    background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    font-family: "kvBald", sans-serif;
+    font-size: 13.5vw;
+    font-weight: bolder;
+    /*   line-height: 1.2em;
+    letter-spacing: 5vw; */
   }
 
   .numberOfCase {
-    font-size: 6vw;
+    font-size: 4vw;
+  }
+
+  .sideText {
+    flex-direction: column;
+    max-width: min-content;
+    justify-content: space-evenly;
+  }
+
+  .alignersPhoto {
+    justify-content: center;
+    align-items: center;
   }
 
   .photoExamples {
+    height: min-content;
     display: grid;
-    grid-template-rows: 65vw 65vw;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 35vw 35vw;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: center;
+    justify-items: stretch;
+    grid-column: 1 / 2;
   }
 
   .imgPadd {
-    max-height: 65vw;
+    max-height: 35vw;
+    max-width: auto;
+    object-fit: contain;
   }
 
-  .innerText {
-    font-size: 9px;
-    margin: 4px 0 15px;
+  video {
+    max-height: 35vw;
+    max-width: auto;
+    object-fit: contain;
+  }
+
+  .companyName {
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    font-family: "Paizolla", sans-serif;
+    font-weight: lighter;
+    margin-bottom: 1.1vw;
+  }
+
+  .companyName img {
+    max-width: 3vw;
+    height: auto;
+  }
+
+  /* .imgPadd{
+
+    max-width: 15vw;
+    max-height: 20vw;
+  } */
+
+  .rightSideBlock {
+    flex-direction: row;
+    margin-left: calc(100% / 10);
+    margin-right: calc(100% / 8);
+    margin-top: calc(100% / 55);
+    margin-bottom: calc(100% / 18);
+  }
+
+  .whatYouDo {
+    font-size: 4vw;
+  }
+
+  /* .photoExamples img,
+  .photoExamples video{
+    width: 50%;
+  } */
+
+  .zakaz {
+    background: linear-gradient(
+      110deg,
+      rgb(255, 255, 255, 0.7),
+      rgb(115, 115, 115, 0.4)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    border-radius: 2vw;
+
+    color: #570080;
+
+    font-size: 4vw;
+    font-family: "kvMedium", sans-serif;
+
+    padding: 2vw 19vw;
+    margin-top: 15vw;
+  }
+
+  .caseInner a {
+    align-items: center;
+    justify-content: center;
   }
 
   .companyP {
-    font-size: 7px;
+    font-size: 1vw;
+    font-family: "Paizolla", san-serif;
+    font-weight: lighter;
+  }
+
+  .zakaz:hover {
+    background: linear-gradient(
+      35deg,
+      var(--yellowcol),
+      var(--orangecol),
+      var(--purplecol)
+    );
+    color: #fffdd5;
+    /*   background-color: var(--orangecol); */
+    transition: 1.8s;
+    cursor: none;
+  }
+
+  .case1 {
+    margin-top: 5.8vw;
+  }
+
+  .caseInner {
+    padding: 5vw;
+
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(
+      110deg,
+      rgb(255, 255, 255, 0.4),
+      rgb(115, 115, 115, 0.1)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    border-radius: 2.083vw;
   }
 
   .upper {
-    margin: 5px 0 55px;
+    text-align: left;
+    font-family: "kvRegular", sans-serif;
+    margin-bottom: 9vw;
+  }
+
+  .down {
+    text-align: justify;
   }
 
   .results {
-    text-align: left;
-    font-size: 10px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 2fr));
+    grid-gap: 2rem;
   }
 
   .name {
-    font-size: 9px;
+    font-family: "Paizolla", sans-serif;
+    font-size: 1vw;
+    font-weight: lighter;
+    color: #c5c5c5;
   }
 
-  .rightSideBlock {
-    margin-bottom: 20px;
+  .results {
+    font-family: "Paizolla", sans-serif;
+    font-size: 1.25vw;
+    font-weight: lighter;
+    color: #ffffff;
+    padding-top: 0.1vw;
+    padding-bottom: 0.5vw;
   }
-  /*  */
-  .uslInner {
-    padding: 8% 12%;
+
+  .innerText {
+    padding-bottom: 2vw;
+    font-family: "Paizolla", sans-serif;
+    font-weight: lighter;
+    font-size: 1.4vw;
+  }
+
+  /* ---------- услуги --------- */
+
+  .textFont {
+    font-family: "kvBald", san-serif;
+  }
+
+  .uslName1 {
+    z-index: 1;
+    background-image: linear-gradient(
+      150deg,
+      var(--yellowcol),
+      var(--orangecol),
+      var(--purplecol)
+    );
+    background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    font-size: 4vw;
+    font-weight: bolder;
+    filter: blur(6px);
   }
 
   .glow-text,
   .glow-text1,
   .glow-text2,
   .glow-text3 {
-    font-size: 14px;
-    padding-top: 2%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-weight: lighter;
+    color: #fff;
+    font-family: "kvRegular", san-serif;
+    font-size: 2.6vw;
   }
 
   .glow-text::after {
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-weight: lighter;
     content: "Экспертная настройка Яндекс.Директ";
-    margin-top: 4%;
+    color: #fff;
+    /*  display: inline-block; */
+    font-size: 2.6vw;
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    filter: blur(20px);
+    margin: 0 5vw;
+    -webkit-text-fill-color: transparent;
   }
 
-  .usl-p {
-    font-size: 9px;
+  .glow-text1::after {
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
     font-weight: lighter;
+    content: "SMM";
+    color: #fff;
+    /*  display: inline-block; */
+    font-size: 2.6vw;
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    filter: blur(20px);
+    margin: 0 13vw;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-text2::after {
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-weight: lighter;
+    content: "Создание бизнес vk сообщества под ключ";
+    color: #fff;
+    /*  display: inline-block; */
+    font-size: 2.6vw;
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    filter: blur(20px);
+    margin: 0 5vw;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-text3::after {
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-weight: lighter;
+    content: "Создание статичного креатива (баннер)";
+    color: #fff;
+    /*  display: inline-block; */
+    font-size: 2.6vw;
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    filter: blur(20px);
+    /*   margin: 0 6vw; */
+    -webkit-text-fill-color: transparent;
+  }
+
+  .videoDop {
+    font-size: 2.1vw;
+    font-family: "kvRegular", san-serif;
+    margin: 2.5vw 0;
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .usl {
+    margin: 7vw 0;
+  }
+
+  .uslBlock {
+    background: linear-gradient(
+      110deg,
+      rgb(255, 255, 255, 0.4),
+      rgb(115, 115, 115, 0.1)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    border-radius: 2.0833vw;
+    max-width: 65vw;
+    /*   max-height: 75vw; */
+    z-index: 3;
+    text-align: center;
+  }
+
+  .usl-logo {
+    /*  max-width: 25vw; */
+    max-height: 25vw;
+  }
+
+  .uslText {
+    font-size: 1.4vw;
+    font-family: "Paizolla", san-serif;
+    /*   font-weight: lighter; */
+    padding-top: 5vw;
+    text-align: justify;
+  }
+
+  .uslInner {
+    padding: 3vw;
   }
 
   .zakUsl-a {
-    font-size: 7px;
-    padding: 1vw 8vw;
+    background-image: linear-gradient(
+      80deg,
+      var(--yellowcol),
+      var(--orangecol),
+      var(--purplecol)
+    );
+    color: #fff;
+    font-size: 1.5vw;
+    font-family: "Paizolla", sans-serif;
+    border-radius: 1vw;
+    padding: 0.7vw calc(100% / 4);
+  }
+
+  .zakUsl-a:hover {
+    color: #fff;
+    transition: 1.4s;
+    border: #fff solid 2px;
+    cursor: none;
+  }
+
+  .zakazUsl {
+    padding-top: 2vw;
+  }
+
+  .prodviz {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .prodviz-a {
-    padding: 2vw 18.5vw;
+    background: linear-gradient(
+      110deg,
+      rgb(255, 255, 255, 0.7),
+      rgb(115, 115, 115, 0.4)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: #fff solid 1px;
+    border-radius: 2vw;
+
+    color: #570080;
+
+    font-size: 4vw;
+    font-family: "kvMedium", sans-serif;
+
+    padding: 2vw 11vw;
+    /* margin-top: 15vw; */
+    justify-content: center;
+    text-align: center;
   }
 
-  /*  */
-  .footLogo {
-    max-width: 30%;
-    height: auto;
+  .prodviz-a {
+    font-family: "kvMedium", san-serif;
   }
-}
 
-@media screen and (max-width: 410px) and (min-width: 377px) {
-  .burger {
+  .prodviz-a:hover {
+    background: linear-gradient(
+      35deg,
+      var(--yellowcol),
+      var(--orangecol),
+      var(--purplecol)
+    );
+    color: #fffdd5;
+    /*   background-color: var(--orangecol); */
+    transition: 1.8s;
+    cursor: none;
+  }
+
+  /* ------------ контакты ------------ */
+  .section_Kontacts {
+    padding-bottom: 12vw;
+    margin-top: 12vw;
+  }
+
+  .left-contacts {
+    flex-direction: column;
+    font-size: 2.5vw;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    font-weight: lighter;
+    font-family: "Paizolla", sans-serif;
+  }
+
+  .left-contacts a {
+    color: #fff;
+  }
+
+  .left-contacts a:hover {
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: 0.6s;
+    cursor: none;
+  }
+
+  .right-contacts {
+    font-size: 9.8vw;
+    width: 50%;
+    font-family: "kvBald", sans-serif;
+    line-height: 0.8em;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+  }
+  .contact-p-right {
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ----------- footer ---------- */
+  .foot {
+    background-color: #000;
+    border-top: #fff solid 1px;
+    flex-direction: column;
+    text-align: center;
+
+    justify-content: space-between;
+    padding-left: calc(100% / 8);
+    padding-right: calc(100% / 8);
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+
+  .footRow1 {
+    font-family: "KvRegular", sans-serif;
+    font-size: 1.1vw;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footRowName {
+    font-family: "KvRegular", sans-serif;
+    font-size: 1.3vw;
+    padding-bottom: 1vw;
+  }
+
+  .footRow2,
+  .footRow3 {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footRow2 a,
+  .footRow3 a {
+    color: #fff;
+    font-size: 1.15vw;
+    font-family: "Paizolla", san-serif;
+    margin-top: 1vw;
+  }
+
+  .footOPtions {
+    flex-direction: column;
+  }
+
+  .option1 {
+    padding-top: 1vw;
+  }
+
+  .footRow2 p,
+  .footRow3 p {
+    color: #fff;
+    font-size: 1.15vw;
+    font-family: "Paizolla", san-serif;
+  }
+
+  .footRow3 a:hover {
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: 0.6s;
+    cursor: none;
+  }
+
+  .footRow2 a:hover {
+    background-image: linear-gradient(
+      35deg,
+      rgb(255, 195, 57),
+      rgb(255, 111, 0),
+      rgb(174, 0, 255)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: 0.6s;
+    cursor: none;
+  }
+
+  .option {
+    padding-top: 1vw;
+  }
+
+  .foot1 {
+    justify-content: space-between;
+  }
+
+  /* @media */
+
+  @media screen and (max-width: 376px) {
     .burger {
       display: flex;
       width: 30px;
       height: 15px;
       padding-left: 4%;
     }
-  }
-
-  .sidebar {
-    right: -280px; /* Скрываем меню по умолчанию */
-  }
-
-  .sidebar.active {
-    right: 0; /* Показываем меню при активации */
-  }
-
-  .container {
-    padding: 2vw 5vw 0;
-  }
-
-  .header {
-    background-repeat: repeat;
-    background-image: url(img/Group1.png);
-  }
-  .one {
-    max-width: 8%;
-  }
-  .whoWeAre {
-    color: #adadad;
-    font-size: 12.6vw;
-  }
-
-  .opis {
-    font-size: 7vw;
-  }
-
-  .opisText {
-    font-size: 11px;
-    font-family: "Paizolla", sans-serif;
-    padding: 4vw 10px 4vw;
-  }
-
-  .section_FirstPage {
-    font-size: 6.7vw;
-  }
-
-  .link {
-    display: none;
-  }
-
-  .notification {
-    max-width: 80%;
-    min-width: 80%;
-    max-height: 13vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    text-align: center;
-    border-radius: 4.5vw;
-  }
-
-  .notificationText {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    /*    width: 70%; */
-    align-items: center;
-  }
-
-  .logoHeader {
-    max-height: 50%;
-  }
-
-  .notiInner {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-  }
-
-  .notiText-1 {
-    font-size: 2vw;
-    color: #adadad;
-    padding-left: 4vw;
-    padding-right: 2vw;
-  }
-
-  .notiText-2 {
-    font-size: 3vw;
-  }
-
-  .headerInner {
-    justify-content: space-evenly;
-    display: flex;
-  }
-
-  .arrow img {
-    max-width: 3vw;
-  }
-
-  /* .arrow {
-    padding-bottom: 3%;
-  } */
-  /*  */
-
-  .rightSideBlock {
-    flex-direction: row;
-    margin: 2vw 7vw 0 0vw;
-  }
-
-  .side {
-    font-size: 22vw;
-  }
-
-  .caseInner {
-    padding: 8vw 6vw;
-  }
-
-  .whatYouDo {
-    font-size: 7vw;
-  }
-
-  .numberOfCase {
-    font-size: 6vw;
-  }
-
-  .photoExamples {
-    display: grid;
-    grid-template-rows: 65vw 65vw;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  }
-
-  .innerText {
-    font-size: 12px;
-    margin: 4px 0 15px;
-  }
-
-  .companyP {
-    font-size: 7px;
-  }
-
-  .upper {
-    margin: 5px 0 55px;
-  }
-
-  .results {
-    text-align: left;
-    font-size: 12px;
-  }
-
-  .name {
-    font-size: 10px;
-  }
-  /*  .zakaz{
-    margin-top: 150px;
-  } */
-  .rightSideBlock {
-    margin-bottom: 20px;
-  }
-
-  .imgPadd {
-    max-height: 65vw;
-  }
-  /*  */
-  .uslInner {
-    padding: 8% 12%;
-  }
-
-  .glow-text,
-  .glow-text1,
-  .glow-text2,
-  .glow-text3 {
-    font-size: 14px;
-    padding-top: 2%;
-  }
-
-  .glow-text::after {
-    content: "Экспертная настройка Яндекс.Директ";
-    margin-top: 4%;
-  }
-
-  .usl-p {
-    font-size: 9px;
-    font-weight: lighter;
-  }
-
-  .zakUsl-a {
-    font-size: 9px;
-    padding: 1vw 8vw;
-  }
-
-  .prodviz-a {
-    padding: 2vw 18.5vw;
-  }
-
-  /*  */
-  .footLogo {
-    max-width: 30%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 440px) and (min-width: 411px) {
-  .burger {
-    display: flex; /* Показываем бургер-меню на мобильных устройствах */
-  }
-
-  .sidebar {
-    right: -280px; /* Скрываем меню по умолчанию */
-  }
-
-  .sidebar.active {
-    right: 0; /* Показываем меню при активации */
-  }
-
-  .container {
-    padding: 2vw 5vw 0;
-  }
-
-  .header {
-    background-repeat: repeat;
-    background-image: url(img/Group1.png);
-  }
-  .one {
-    max-width: 8%;
-  }
-
-  .logoHeader {
-    max-height: 50%;
-  }
-  .notification {
-    max-width: 80%;
-    min-width: 80%;
-    max-height: 25vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    text-align: center;
-    border-radius: 4.5vw;
-  }
-  .whoWeAre {
-    color: #adadad;
-    font-size: 12.8vw;
-  }
-
-  .rightSideBlock {
-    margin-bottom: 160px;
-  }
-
-  .opis {
-    font-size: 7.3vw;
-  }
-
-  .opisText {
-    font-size: 12px;
-    font-family: "Paizolla", sans-serif;
-    padding: 4vw 10px 4vw;
-  }
-
-  .section_FirstPage {
-    font-size: 6.7vw;
-  }
-
-  .link {
-    display: none;
-  }
-
-  .notification {
-    max-width: 80%;
-    min-width: 80%;
-    max-height: 13vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    text-align: center;
-    border-radius: 4.5vw;
-  }
-
-  .notificationText {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    /*    width: 70%; */
-    align-items: center;
-  }
-
-  .logoHeader {
-    max-height: 50%;
-  }
-
-  .notiInner {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-  }
-
-  .notiText-1 {
-    font-size: 2vw;
-    color: #adadad;
-    padding-left: 4vw;
-    padding-right: 2vw;
-  }
-
-  .notiText-2 {
-    font-size: 3vw;
-  }
-
-  .headerInner {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .arrow img {
-    max-width: 3vw;
-  }
-
-  /* .arrow {
-    padding-bottom: 3%;
-  } */
-  /*  */
-
-  .rightSideBlock {
-    flex-direction: row;
-    margin: 2vw 7vw 0 0vw;
-    margin-bottom: 20px;
-  }
-
-  .side {
-    font-size: 22vw;
-  }
-
-  .caseInner {
-    padding: 8vw 6vw;
-  }
-
-  .whatYouDo {
-    font-size: 7vw;
-  }
-
-  .numberOfCase {
-    font-size: 6vw;
-  }
-
-  .photoExamples {
-    display: grid;
-    grid-template-rows: 65vw 65vw;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  }
-
-  .imgPadd {
-    max-height: 65vw;
-  }
-
-  .innerText {
-    font-size: 12px;
-    margin: 4px 0 15px;
-  }
-
-  .companyP {
-    font-size: 7px;
-  }
-
-  .upper {
-    margin: 5px 0 55px;
-  }
-
-  .results {
-    text-align: left;
-    font-size: 12px;
-  }
-
-  .zakaz {
-    padding: 2vw 22vw;
-  }
-
-  .name {
-    font-size: 10px;
-  }
-  /*  */
-  .uslInner {
-    padding: 8% 12%;
-  }
-
-  .glow-text,
-  .glow-text1,
-  .glow-text2,
-  .glow-text3 {
-    font-size: 14px;
-    padding-top: 2%;
-  }
-
-  .glow-text::after {
-    content: "Экспертная настройка Яндекс.Директ";
-    margin-top: 4%;
-  }
-
-  .usl-p {
-    font-size: 10px;
-    font-weight: lighter;
-  }
-
-  .zakUsl-a {
-    font-size: 10px;
-    padding: 1vw 8vw;
-  }
-
-  .prodviz-a {
-    padding: 2vw 18.5vw;
-  }
-
-  /*  */
-  .footLogo {
-    max-width: 30%;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 451px) and (max-width: 520px) {
-  .burger {
-    display: flex; /* Показываем бургер-меню на мобильных устройствах */
-  }
-
-  .sidebar {
-    right: -280px; /* Скрываем меню по умолчанию */
-  }
-
-  .sidebar.active {
-    right: 0; /* Показываем меню при активации */
-  }
-
-  .container {
-    padding: 2vw 5vw 0;
-  }
-
-  .header {
-    background-repeat: repeat;
-    background-image: url(img/Group1.png);
-  }
-  .one {
-    max-width: 8%;
-  }
-  .whoWeAre {
-    color: #adadad;
-    font-size: 12.8vw;
-  }
-
-  .notification {
-    max-width: 80%;
-    min-width: 80%;
-    min-height: 10vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    text-align: center;
-    border-radius: 4.5vw;
-  }
-
-  /*  .rightSideBlock {
-    margin-bottom: 160px;
-  } */
-
-  .opis {
-    font-size: 7.3vw;
-  }
-
-  .opisText {
-    font-size: 12px;
-    font-family: "Paizolla", sans-serif;
-    padding: 4vw 10px 4vw;
-  }
-
-  .section_FirstPage {
-    font-size: 6.7vw;
-  }
-
-  .link {
-    display: none;
-  }
-
-  .notification {
-    max-width: 80%;
-    min-width: 80%;
-    max-height: 13vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-    text-align: center;
-    border-radius: 4.5vw;
-  }
-
-  .notificationText {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    /*    width: 70%; */
-    align-items: center;
-  }
-
-  .logoHeader {
-    max-height: 50%;
-  }
-
-  .notiInner {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
-  }
-
-  .notiText-1 {
-    font-size: 2vw;
-    color: #adadad;
-    padding-left: 4vw;
-    padding-right: 2vw;
-  }
-
-  .notiText-2 {
-    font-size: 3vw;
-  }
-
-  .headerInner {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .arrow img {
-    max-width: 5vw;
-  }
-
-  .arrrow {
-    padding-bottom: 4;
-  }
-
-  .innerText {
-    font-size: 12px;
-    margin: 4px 0 15px;
-  }
-
-  .companyP {
-    font-size: 7px;
-  }
-
-  .upper {
-    margin: 5px 0 55px;
-  }
-
-  .results {
-    text-align: left;
-    font-size: 12px;
-  }
-
-  .name {
-    font-size: 10px;
-  }
-
-  .zakaz {
-    padding: 2vw 22vw;
-  }
-
-  /* .rightSideBlock {
-    flex-direction: row;
-    margin: 2vw 7vw 0 0vw;
-    margin-bottom: 20px;
-  }
-
-  .side {
-    font-size: 22vw;
-  }
-
-  .caseInner {
-    padding: 8vw 6vw;
-  }
-
-  .whatYouDo {
-    font-size: 7vw;
-  }
-
-  .numberOfCase {
-    font-size: 6vw;
-  }
-
-  .photoExamples {
-    display: grid;
-    grid-template-rows: 65vw 65vw;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  }
-
-  .imgPadd {
-    max-height: 65vw;
-  }
-
-  .innerText {
-    font-size: 12px;
-    margin: 4px 0 15px;
-  }
-
-  .companyP {
-    font-size: 7px;
-  }
-
-  .upper {
-    margin: 5px 0 55px;
-  }
-
-  .results {
-    text-align: left;
-    font-size: 12px;
-  }
-
-  .zakaz {
-    padding: 2vw 22vw;
-  } */
-
-  .name {
-    font-size: 10px;
-  }
-  /*  */
-  .uslInner {
-    padding: 8% 12%;
-  }
-
-  .glow-text,
-  .glow-text1,
-  .glow-text2,
-  .glow-text3 {
-    font-size: 14px;
-    padding-top: 2%;
-  }
-
-  .glow-text::after {
-    content: "Экспертная настройка Яндекс.Директ";
-    margin-top: 4%;
-  }
-
-  .usl-p {
-    font-size: 10px;
-    font-weight: lighter;
-  }
-
-  .zakUsl-a {
-    font-size: 10px;
-    padding: 1vw 8vw;
-  }
-
-  .prodviz-a {
-    padding: 2vw 18.5vw;
-  }
-
-  /*  */
-  .iconsFooter svg {
-    width: 45%;
-  }
-
-  .footLogo {
-    width: 25px;
-    height: auto;
-  }
-
-  .footRow3 {
-    width: 60%;
-  }
-
-  .footRow3 p {
-    font-size: 12px;
-    color: #ffffff;
-  }
-
-  .foot1 {
-    justify-content: space-between;
-  }
-
-  .companyNAme {
-    font-size: 12px;
-  }
-
-  .rights {
-    font-size: 9px;
-    margin-top: 7%;
-    font-family: "Paizolla", sans-serif;
-    font-weight: lighter;
-  }
-}
-
-@media screen and (max-width: 768px) and (min-width: 520px) {
-  .burger {
-    display: none;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .sidebar.active {
-    display: none;
-  }
-
-  .arrow img {
-    max-width: 4vw;
-  }
-
-  .logoHeader {
-    max-width: 30px;
-    height: auto;
-  }
-
-  .link {
-    font-size: 8px;
-  }
-
-  .arrrow {
-    padding-bottom: 5%;
-  }
-  /*  */
-  .photoExamples {
-    display: grid;
-    grid-template-rows: 45vw 45vw;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  .imgPadd {
-    max-height: 45vw;
-  }
-  /*  */
-  .iconsFooter svg {
-    width: 45%;
-  }
-
-  .footLogo {
-    width: 25px;
-    height: auto;
-  }
-
-  .footRow3 {
-    width: 60%;
-  }
-
-  .footRow3 p {
-    font-size: 12px;
-    color: #ffffff;
-  }
-
-  .foot1 {
-    justify-content: space-between;
-  }
-
-  .companyNAme {
-    font-size: 12px;
-  }
-
-  .rights {
-    font-size: 9px;
-    margin-top: 7%;
-    font-family: "Paizolla", sans-serif;
-    font-weight: lighter;
-  }
-}
-
-@media screen and (max-width: 450px) and (min-width: 319px) {
-  /*  */
-  .iconsFooter svg {
-    width: 45%;
-  }
-
-  .footLogo {
-    width: 25px;
-    height: auto;
-  }
-
-  .footRow3 {
-    width: 70%;
-  }
-
-  .footRow3 p {
-    font-size: 12px;
-    color: #ffffff;
-  }
-
-  .companyNAme {
-    font-size: 12px;
-  }
-
-  .rights {
-    font-size: 9px;
-    margin-top: 7%;
-    font-family: "Paizolla", sans-serif;
-    font-weight: lighter;
-  }
-
-  .foot1 {
-    justify-content: space-between;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .burger {
-    display: none;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .sidebar.active {
-    display: none;
-  }
-
-  /*  */
-  .iconsFooter svg {
-    width: 35%;
-  }
-
-  .foot1 {
-    justify-content: space-between;
-  }
-
-  .footLogo {
-    width: 85px;
-    height: auto;
-  }
-
-  .footRow3 {
-    width: 70%;
-  }
-
-  .footRow3 p {
-    font-size: 24px;
-    color: #ffffff;
-  }
-
-  .companyNAme {
-    font-size: 24px;
-  }
-
-  .rights {
-    font-size: 20px;
-    margin-top: 7%;
-    font-family: "Paizolla", sans-serif;
-    font-weight: lighter;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-  .container {
-    padding-left: calc(100% / 7);
-    padding-right: calc(100% / 7);
-  }
-
-  .link {
-    font-size: 1.1vw;
-  }
-
-  .usl-logo {
-    min-height: auto;
-    min-width: 24vw;
-  }
-
-  .photoExamples {
-    height: min-content;
-    display: grid;
-    grid-template-rows: 40vw 40vw;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem;
-    align-items: center;
-    justify-items: stretch;
-    grid-column: 1 / 2;
-  }
-
-  /*  */
-  .iconsFooter svg {
-    width: 45%;
-  }
 
-  .foot1 {
-    justify-content: space-between;
-  }
-
-  .footLogo {
-    width: 25px;
-    height: auto;
-  }
-
-  .footRow3 {
-    width: 70%;
-  }
-
-  .footRow3 p {
-    font-size: 24px;
-    color: #ffffff;
-  }
-
-  .companyNAme {
-    font-size: 24px;
-  }
-
-  .rights {
-    font-size: 20px;
-    margin-top: 7%;
-    font-family: "Paizolla", sans-serif;
-    font-weight: lighter;
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  .photoExamples {
-    height: min-content;
-    display: grid;
-    grid-template-rows: 40vw 40vw;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 1rem;
-    align-items: center;
-    justify-items: stretch;
-    grid-column: 1 / 2;
+    .sidebar {
+      right: -280px; /* Скрываем меню по умолчанию */
+    }
+
+    .sidebar.active {
+      right: 0; /* Показываем меню при активации */
+    }
+
+    .container {
+      padding: 2vw 5vw 0;
+    }
+
+    .header {
+      background-repeat: repeat;
+      background-image: url(img/Group1.png);
+    }
+    .one {
+      max-width: 8%;
+    }
+    .whoWeAre {
+      color: #adadad;
+      font-size: 12.6vw;
+    }
+
+    .opis {
+      font-size: 7.3vw;
+    }
+
+    .opisText {
+      font-size: 10px;
+      font-family: "Paizolla", sans-serif;
+      padding: 4vw 10px 4vw;
+    }
+
+    .section_FirstPage {
+      font-size: 6.7vw;
+    }
+
+    .link {
+      display: none;
+    }
+
+    .notification {
+      max-width: 80%;
+      min-width: 80%;
+      max-height: 13vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+      text-align: center;
+      border-radius: 4.5vw;
+    }
+
+    .notificationText {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      /*    width: 70%; */
+      align-items: center;
+    }
+
+    .logoHeader {
+      max-height: 50%;
+    }
+
+    .notiInner {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+    }
+
+    .notiText-1 {
+      font-size: 2vw;
+      color: #adadad;
+      padding-left: 4vw;
+      padding-right: 2vw;
+    }
+
+    .notiText-2 {
+      font-size: 3vw;
+    }
+
+    .headerInner {
+      display: flex;
+      justify-content: center;
+    }
+
+    .arrow img {
+      max-width: 3vw;
+    }
+
+    /* .arrow {
+      padding-bottom: 3%;
+    } */
+    /*  */
+
+    .rightSideBlock {
+      flex-direction: row;
+      margin: 2vw 7vw 0 0vw;
+    }
+
+    .side {
+      font-size: 22vw;
+    }
+
+    .caseInner {
+      padding: 8vw 6vw;
+    }
+
+    .whatYouDo {
+      font-size: 7vw;
+    }
+
+    .numberOfCase {
+      font-size: 6vw;
+    }
+
+    .photoExamples {
+      display: grid;
+      grid-template-rows: 65vw 65vw;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .imgPadd {
+      max-height: 65vw;
+    }
+
+    .innerText {
+      font-size: 9px;
+      margin: 4px 0 15px;
+    }
+
+    .companyP {
+      font-size: 7px;
+    }
+
+    .upper {
+      margin: 5px 0 55px;
+    }
+
+    .results {
+      text-align: left;
+      font-size: 10px;
+    }
+
+    .name {
+      font-size: 9px;
+    }
+
+    .rightSideBlock {
+      margin-bottom: 20px;
+    }
+    /*  */
+    .uslInner {
+      padding: 8% 12%;
+    }
+
+    .glow-text,
+    .glow-text1,
+    .glow-text2,
+    .glow-text3 {
+      font-size: 14px;
+      padding-top: 2%;
+    }
+
+    .glow-text::after {
+      content: "Экспертная настройка Яндекс.Директ";
+      margin-top: 4%;
+    }
+
+    .usl-p {
+      font-size: 9px;
+      font-weight: lighter;
+    }
+
+    .zakUsl-a {
+      font-size: 7px;
+      padding: 1vw 8vw;
+    }
+
+    .prodviz-a {
+      padding: 2vw 18.5vw;
+    }
+
+    /*  */
+    .footLogo {
+      max-width: 30%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 410px) and (min-width: 377px) {
+    .burger {
+      .burger {
+        display: flex;
+        width: 30px;
+        height: 15px;
+        padding-left: 4%;
+      }
+    }
+
+    .sidebar {
+      right: -280px; /* Скрываем меню по умолчанию */
+    }
+
+    .sidebar.active {
+      right: 0; /* Показываем меню при активации */
+    }
+
+    .container {
+      padding: 2vw 5vw 0;
+    }
+
+    .header {
+      background-repeat: repeat;
+      background-image: url(img/Group1.png);
+    }
+    .one {
+      max-width: 8%;
+    }
+    .whoWeAre {
+      color: #adadad;
+      font-size: 12.6vw;
+    }
+
+    .opis {
+      font-size: 7vw;
+    }
+
+    .opisText {
+      font-size: 11px;
+      font-family: "Paizolla", sans-serif;
+      padding: 4vw 10px 4vw;
+    }
+
+    .section_FirstPage {
+      font-size: 6.7vw;
+    }
+
+    .link {
+      display: none;
+    }
+
+    .notification {
+      max-width: 80%;
+      min-width: 80%;
+      max-height: 13vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+      text-align: center;
+      border-radius: 4.5vw;
+    }
+
+    .notificationText {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      /*    width: 70%; */
+      align-items: center;
+    }
+
+    .logoHeader {
+      max-height: 50%;
+    }
+
+    .notiInner {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+    }
+
+    .notiText-1 {
+      font-size: 2vw;
+      color: #adadad;
+      padding-left: 4vw;
+      padding-right: 2vw;
+    }
+
+    .notiText-2 {
+      font-size: 3vw;
+    }
+
+    .headerInner {
+      justify-content: space-evenly;
+      display: flex;
+    }
+
+    .arrow img {
+      max-width: 3vw;
+    }
+
+    /* .arrow {
+      padding-bottom: 3%;
+    } */
+    /*  */
+
+    .rightSideBlock {
+      flex-direction: row;
+      margin: 2vw 7vw 0 0vw;
+    }
+
+    .side {
+      font-size: 22vw;
+    }
+
+    .caseInner {
+      padding: 8vw 6vw;
+    }
+
+    .whatYouDo {
+      font-size: 7vw;
+    }
+
+    .numberOfCase {
+      font-size: 6vw;
+    }
+
+    .photoExamples {
+      display: grid;
+      grid-template-rows: 65vw 65vw;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    .innerText {
+      font-size: 12px;
+      margin: 4px 0 15px;
+    }
+
+    .companyP {
+      font-size: 7px;
+    }
+
+    .upper {
+      margin: 5px 0 55px;
+    }
+
+    .results {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .name {
+      font-size: 10px;
+    }
+    /*  .zakaz{
+      margin-top: 150px;
+    } */
+    .rightSideBlock {
+      margin-bottom: 20px;
+    }
+
+    .imgPadd {
+      max-height: 65vw;
+    }
+    /*  */
+    .uslInner {
+      padding: 8% 12%;
+    }
+
+    .glow-text,
+    .glow-text1,
+    .glow-text2,
+    .glow-text3 {
+      font-size: 14px;
+      padding-top: 2%;
+    }
+
+    .glow-text::after {
+      content: "Экспертная настройка Яндекс.Директ";
+      margin-top: 4%;
+    }
+
+    .usl-p {
+      font-size: 9px;
+      font-weight: lighter;
+    }
+
+    .zakUsl-a {
+      font-size: 9px;
+      padding: 1vw 8vw;
+    }
+
+    .prodviz-a {
+      padding: 2vw 18.5vw;
+    }
+
+    /*  */
+    .footLogo {
+      max-width: 30%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 440px) and (min-width: 411px) {
+    .burger {
+      display: flex; /* Показываем бургер-меню на мобильных устройствах */
+    }
+
+    .sidebar {
+      right: -280px; /* Скрываем меню по умолчанию */
+    }
+
+    .sidebar.active {
+      right: 0; /* Показываем меню при активации */
+    }
+
+    .container {
+      padding: 2vw 5vw 0;
+    }
+
+    .header {
+      background-repeat: repeat;
+      background-image: url(img/Group1.png);
+    }
+    .one {
+      max-width: 8%;
+    }
+
+    .logoHeader {
+      max-height: 50%;
+    }
+    .notification {
+      max-width: 80%;
+      min-width: 80%;
+      max-height: 25vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+      text-align: center;
+      border-radius: 4.5vw;
+    }
+    .whoWeAre {
+      color: #adadad;
+      font-size: 12.8vw;
+    }
+
+    .rightSideBlock {
+      margin-bottom: 160px;
+    }
+
+    .opis {
+      font-size: 7.3vw;
+    }
+
+    .opisText {
+      font-size: 12px;
+      font-family: "Paizolla", sans-serif;
+      padding: 4vw 10px 4vw;
+    }
+
+    .section_FirstPage {
+      font-size: 6.7vw;
+    }
+
+    .link {
+      display: none;
+    }
+
+    .notification {
+      max-width: 80%;
+      min-width: 80%;
+      max-height: 13vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+      text-align: center;
+      border-radius: 4.5vw;
+    }
+
+    .notificationText {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      /*    width: 70%; */
+      align-items: center;
+    }
+
+    .logoHeader {
+      max-height: 50%;
+    }
+
+    .notiInner {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+    }
+
+    .notiText-1 {
+      font-size: 2vw;
+      color: #adadad;
+      padding-left: 4vw;
+      padding-right: 2vw;
+    }
+
+    .notiText-2 {
+      font-size: 3vw;
+    }
+
+    .headerInner {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .arrow img {
+      max-width: 3vw;
+    }
+
+    /* .arrow {
+      padding-bottom: 3%;
+    } */
+    /*  */
+
+    .rightSideBlock {
+      flex-direction: row;
+      margin: 2vw 7vw 0 0vw;
+      margin-bottom: 20px;
+    }
+
+    .side {
+      font-size: 22vw;
+    }
+
+    .caseInner {
+      padding: 8vw 6vw;
+    }
+
+    .whatYouDo {
+      font-size: 7vw;
+    }
+
+    .numberOfCase {
+      font-size: 6vw;
+    }
+
+    .photoExamples {
+      display: grid;
+      grid-template-rows: 65vw 65vw;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    .imgPadd {
+      max-height: 65vw;
+    }
+
+    .innerText {
+      font-size: 12px;
+      margin: 4px 0 15px;
+    }
+
+    .companyP {
+      font-size: 7px;
+    }
+
+    .upper {
+      margin: 5px 0 55px;
+    }
+
+    .results {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .zakaz {
+      padding: 2vw 22vw;
+    }
+
+    .name {
+      font-size: 10px;
+    }
+    /*  */
+    .uslInner {
+      padding: 8% 12%;
+    }
+
+    .glow-text,
+    .glow-text1,
+    .glow-text2,
+    .glow-text3 {
+      font-size: 14px;
+      padding-top: 2%;
+    }
+
+    .glow-text::after {
+      content: "Экспертная настройка Яндекс.Директ";
+      margin-top: 4%;
+    }
+
+    .usl-p {
+      font-size: 10px;
+      font-weight: lighter;
+    }
+
+    .zakUsl-a {
+      font-size: 10px;
+      padding: 1vw 8vw;
+    }
+
+    .prodviz-a {
+      padding: 2vw 18.5vw;
+    }
+
+    /*  */
+    .footLogo {
+      max-width: 30%;
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: 451px) and (max-width: 520px) {
+    .burger {
+      display: flex; /* Показываем бургер-меню на мобильных устройствах */
+    }
+
+    .sidebar {
+      right: -280px; /* Скрываем меню по умолчанию */
+    }
+
+    .sidebar.active {
+      right: 0; /* Показываем меню при активации */
+    }
+
+    .container {
+      padding: 2vw 5vw 0;
+    }
+
+    .header {
+      background-repeat: repeat;
+      background-image: url(img/Group1.png);
+    }
+    .one {
+      max-width: 8%;
+    }
+    .whoWeAre {
+      color: #adadad;
+      font-size: 12.8vw;
+    }
+
+    .notification {
+      max-width: 80%;
+      min-width: 80%;
+      min-height: 10vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+      text-align: center;
+      border-radius: 4.5vw;
+    }
+
+    /*  .rightSideBlock {
+      margin-bottom: 160px;
+    } */
+
+    .opis {
+      font-size: 7.3vw;
+    }
+
+    .opisText {
+      font-size: 12px;
+      font-family: "Paizolla", sans-serif;
+      padding: 4vw 10px 4vw;
+    }
+
+    .section_FirstPage {
+      font-size: 6.7vw;
+    }
+
+    .link {
+      display: none;
+    }
+
+    .notification {
+      max-width: 80%;
+      min-width: 80%;
+      max-height: 13vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+      text-align: center;
+      border-radius: 4.5vw;
+    }
+
+    .notificationText {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      /*    width: 70%; */
+      align-items: center;
+    }
+
+    .logoHeader {
+      max-height: 50%;
+    }
+
+    .notiInner {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0vw;
+      padding-bottom: 0vw;
+    }
+
+    .notiText-1 {
+      font-size: 2vw;
+      color: #adadad;
+      padding-left: 4vw;
+      padding-right: 2vw;
+    }
+
+    .notiText-2 {
+      font-size: 3vw;
+    }
+
+    .headerInner {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .arrow img {
+      max-width: 5vw;
+    }
+
+    .arrrow {
+      padding-bottom: 4;
+    }
+
+    .innerText {
+      font-size: 12px;
+      margin: 4px 0 15px;
+    }
+
+    .companyP {
+      font-size: 7px;
+    }
+
+    .upper {
+      margin: 5px 0 55px;
+    }
+
+    .results {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .name {
+      font-size: 10px;
+    }
+
+    .zakaz {
+      padding: 2vw 22vw;
+    }
+
+    /* .rightSideBlock {
+      flex-direction: row;
+      margin: 2vw 7vw 0 0vw;
+      margin-bottom: 20px;
+    }
+
+    .side {
+      font-size: 22vw;
+    }
+
+    .caseInner {
+      padding: 8vw 6vw;
+    }
+
+    .whatYouDo {
+      font-size: 7vw;
+    }
+
+    .numberOfCase {
+      font-size: 6vw;
+    }
+
+    .photoExamples {
+      display: grid;
+      grid-template-rows: 65vw 65vw;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    .imgPadd {
+      max-height: 65vw;
+    }
+
+    .innerText {
+      font-size: 12px;
+      margin: 4px 0 15px;
+    }
+
+    .companyP {
+      font-size: 7px;
+    }
+
+    .upper {
+      margin: 5px 0 55px;
+    }
+
+    .results {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .zakaz {
+      padding: 2vw 22vw;
+    } */
+
+    .name {
+      font-size: 10px;
+    }
+    /*  */
+    .uslInner {
+      padding: 8% 12%;
+    }
+
+    .glow-text,
+    .glow-text1,
+    .glow-text2,
+    .glow-text3 {
+      font-size: 14px;
+      padding-top: 2%;
+    }
+
+    .glow-text::after {
+      content: "Экспертная настройка Яндекс.Директ";
+      margin-top: 4%;
+    }
+
+    .usl-p {
+      font-size: 10px;
+      font-weight: lighter;
+    }
+
+    .zakUsl-a {
+      font-size: 10px;
+      padding: 1vw 8vw;
+    }
+
+    .prodviz-a {
+      padding: 2vw 18.5vw;
+    }
+
+    /*  */
+    .iconsFooter svg {
+      width: 45%;
+    }
+
+    .footLogo {
+      width: 25px;
+      height: auto;
+    }
+
+    .footRow3 {
+      width: 60%;
+    }
+
+    .footRow3 p {
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    .foot1 {
+      justify-content: space-between;
+    }
+
+    .companyNAme {
+      font-size: 12px;
+    }
+
+    .rights {
+      font-size: 9px;
+      margin-top: 7%;
+      font-family: "Paizolla", sans-serif;
+      font-weight: lighter;
+    }
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 520px) {
+    .burger {
+      display: none;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .sidebar.active {
+      display: none;
+    }
+
+    .arrow img {
+      max-width: 4vw;
+    }
+
+    .logoHeader {
+      max-width: 30px;
+      height: auto;
+    }
+
+    .link {
+      font-size: 8px;
+    }
+
+    .arrrow {
+      padding-bottom: 5%;
+    }
+    /*  */
+    .photoExamples {
+      display: grid;
+      grid-template-rows: 45vw 45vw;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .imgPadd {
+      max-height: 45vw;
+    }
+    /*  */
+    .iconsFooter svg {
+      width: 45%;
+    }
+
+    .footLogo {
+      width: 25px;
+      height: auto;
+    }
+
+    .footRow3 {
+      width: 60%;
+    }
+
+    .footRow3 p {
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    .foot1 {
+      justify-content: space-between;
+    }
+
+    .companyNAme {
+      font-size: 12px;
+    }
+
+    .rights {
+      font-size: 9px;
+      margin-top: 7%;
+      font-family: "Paizolla", sans-serif;
+      font-weight: lighter;
+    }
+  }
+
+  @media screen and (max-width: 450px) and (min-width: 319px) {
+    /*  */
+    .iconsFooter svg {
+      width: 45%;
+    }
+
+    .footLogo {
+      width: 25px;
+      height: auto;
+    }
+
+    .footRow3 {
+      width: 70%;
+    }
+
+    .footRow3 p {
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    .companyNAme {
+      font-size: 12px;
+    }
+
+    .rights {
+      font-size: 9px;
+      margin-top: 7%;
+      font-family: "Paizolla", sans-serif;
+      font-weight: lighter;
+    }
+
+    .foot1 {
+      justify-content: space-between;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .burger {
+      display: none;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .sidebar.active {
+      display: none;
+    }
+
+    /*  */
+    .iconsFooter svg {
+      width: 35%;
+    }
+
+    .foot1 {
+      justify-content: space-between;
+    }
+
+    .footLogo {
+      width: 85px;
+      height: auto;
+    }
+
+    .footRow3 {
+      width: 70%;
+    }
+
+    .footRow3 p {
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    .companyNAme {
+      font-size: 24px;
+    }
+
+    .rights {
+      font-size: 20px;
+      margin-top: 7%;
+      font-family: "Paizolla", sans-serif;
+      font-weight: lighter;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .container {
+      padding-left: calc(100% / 7);
+      padding-right: calc(100% / 7);
+    }
+
+    .link {
+      font-size: 1.1vw;
+    }
+
+    .usl-logo {
+      min-height: auto;
+      min-width: 24vw;
+    }
+
+    .photoExamples {
+      height: min-content;
+      display: grid;
+      grid-template-rows: 40vw 40vw;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      align-items: center;
+      justify-items: stretch;
+      grid-column: 1 / 2;
+    }
+
+    /*  */
+    .iconsFooter svg {
+      width: 45%;
+    }
+
+    .foot1 {
+      justify-content: space-between;
+    }
+
+    .footLogo {
+      width: 25px;
+      height: auto;
+    }
+
+    .footRow3 {
+      width: 70%;
+    }
+
+    .footRow3 p {
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    .companyNAme {
+      font-size: 24px;
+    }
+
+    .rights {
+      font-size: 20px;
+      margin-top: 7%;
+      font-family: "Paizolla", sans-serif;
+      font-weight: lighter;
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    .photoExamples {
+      height: min-content;
+      display: grid;
+      grid-template-rows: 40vw 40vw;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 1rem;
+      align-items: center;
+      justify-items: stretch;
+      grid-column: 1 / 2;
+    }
   }
-}
